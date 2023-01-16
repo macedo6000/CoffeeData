@@ -7,11 +7,33 @@
 ### Roles
 
 * Project Manager
+   * Develops a project plan
+   * Leads and manages the project team
+   * Determines the methodology used on the project
+   * Establishes a project schedule and determine each phase
+   * Assigns tasks to project team members
+   * Provides regular updates to team
+
 * Analyst
+   * Cleans, organizes, analysis data 
+
 * QA Manager
+   * Tests work done by analyst and helps to find issues in code
+
 * Software Architect
+   * Defines, documents, and communicates work into platform
+   * Makes sure everyone is using the necessary tools, and using it correctly
+   * Makes sure that work comes out in stages in a timely way so that the overall organization can make progress before it’s complete
+   * Make sure that the Analyst, QA Manager, and Database Administrator are in synchronization
+
 * Database Administrator
+   * Models, designs and creates the databases and tables
+   * Understands the projects requirements and designs a solution that will meet the projects needs
+   * Determines the overall model and framework for the solution  
+
 * Dashboard Manager
+   * Organizes repository 
+   * Makes sure all files are working efficiently
 
 ---
 
