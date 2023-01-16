@@ -68,4 +68,27 @@ Sayan
 
 ---
 
+### Questions
+Questions for project:
+* How can data answer our question?
+* What dataset or datasets will suit our needs?
+* When having the data, what will we clean, organize and perform?
+
+
+Questions for us:
+* Which ideas are essential?
+* Which would be nice to have?
+* Which would involve too much work to complete on time? 
+* What will the roles be and responsbilities for the week
+* Which tools will best fit? 
+* Which tools will be used for each section?
+
+
+Questions for presentation:
+* How did you choose the model, and why? 
+* What roadblocks did you encounter, and how did you solve them? 
+* Illustrate all these points in a way that’s engaging for your audience?
+
+---
+
 ### References
