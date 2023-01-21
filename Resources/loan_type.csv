@@ -1,0 +1,5 @@
+loan_type,loan_type_name,count
+1,Conventional,1324862
+2,FHA-insured,255304
+3,VA-guaranteed,128964
+4,FSA/RHS-guaranteed,5329

@@ -1,0 +1,11 @@
+purchaser_type,purchaser_type_name,count
+0,Loan was not originated or was not sold in calendar year covered by register,893403
+1,Fannie Mae (FNMA),257246
+2,Ginnie Mae (GNMA),158456
+3,Freddie Mac (FHLMC),171975
+4,Farmer Mac (FAMC),35
+5,Private securitization,17202
+6,"Commercial bank, savings bank or savings association",89764
+7,"Life insurance company, credit union, mortgage bank, or finance company",82080
+8,Affiliate institution,12319
+9,Other type of purchaser,31979

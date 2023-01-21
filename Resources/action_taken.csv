@@ -1,0 +1,9 @@
+action_taken,action_taken_name,count
+1,Loan originated,877753
+2,Application approved but not accepted,53535
+3,Application denied by financial institution,226258
+4,Application withdrawn by applicant,241369
+5,File closed for incompleteness,81948
+6,Loan purchased by the institution,233447
+7,Preapproval request denied by financial institution,80
+8,Preapproval request approved but not accepted,69

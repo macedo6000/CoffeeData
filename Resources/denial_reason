@@ -1,0 +1,11 @@
+denial_reason_1,denial_reason_name_1,count
+1.0,Debt-to-income ratio,49084.0
+2.0,Employment history,1531.0
+3.0,Credit history,28375.0
+4.0,Collateral,19886.0
+5.0,"Insufficient cash (downpayment, closing costs)",4858.0
+6.0,Unverifiable information,9060.0
+7.0,Credit application incomplete,23034.0
+8.0,Mortgage insurance denied,67.0
+9.0,Other,14627.0
+,,

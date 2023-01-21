@@ -1,0 +1,5 @@
+lien_status,lien_status_name,count
+1,Secured by a first lien,1414092
+2,Secured by a subordinate lien,47535
+3,Not secured by a lien,19385
+4,Not applicable,233447
