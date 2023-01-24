@@ -1,2 +1,2 @@
-# CoffeeData
+# Lending_Discrimination
 Final Project
