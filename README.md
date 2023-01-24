@@ -63,30 +63,10 @@ Presentation:
 ### Tasks
 
 Shared
+* Discuss theme
 * Discuss roles
 * Discuss tools and software to use
-
-<br>
-
-Angelina 
-
-<br>
-
-Daniel
-
-<br>
-
-Nicholas
-
-<br>
-
-Raj
-* Selected topic and reasoning
-* Analysis questions
-
-<br>
-
-Sayan
+* Clean data 
 
 ---
 
@@ -96,7 +76,6 @@ Questions for project:
 * What dataset or datasets will suit our needs?
 * When having the data, what will we clean, organize and perform?
 
-
 Questions for us:
 * Which ideas are essential?
 * Which would be nice to have?
@@ -104,7 +83,6 @@ Questions for us:
 * What will the roles be and responsbilities for the week
 * Which tools will best fit? 
 * Which tools will be used for each section?
-
 
 Questions for presentation:
 * How did you choose the model, and why? 
@@ -122,7 +100,7 @@ Questions for presentation:
 In this project, team 5 will be analyzing the criterias for eligibility for home mortgages. The reason why we chose to analyze loan procceses is to identify what are potential factors on these applications. By the year, the reality of wanting to have our dream home for our families becomes a much more serious topic. Understanding loans and acknowledging what components increases our chances of securing credit at the most favorable terms can save you thousands. As a team, we will examine three different indicators: diversity, location, and income. For diveristy, we want to identify if there is bias on applicants that come from a diverse background involving gender, race, and ethicity. We will also identify if the county of where this loan is coming from has any affect on the applications results and lastly, on the applicants income. By studying this dataset, the team hopes to further understand loan applications and help others identify what factors can potentially predict the likelyhood of getting an offer. As well, to eliminate lending discrimination in the world. 
 
 #### A description of the data
-Our data is 
+Our dataset is more than 1 million rows and 20 columns that contain information on approved and rejected loans in California in 2017. The data has headers with several subjects regarding financial, cultural, and location background. 
 
 #### The questions that the team plans to answer with the project
 The questions that we will be answering will be:
