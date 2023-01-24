@@ -118,13 +118,13 @@ Questions for presentation:
 
 ### Presentation
 
-The selected topic and the reasoning for that selection (20 points)
-The reason why we chose to analyze the critierias for eligibility for home mortgages is to identify if there is bias on loan applications. This bias can come from judging applicants based on their backgrounds such as their gender, race, and ethicity. A loan application should be accepted or denied soley based on income, credit score, and other financial factors. By studying this dataset, the team will try to identify lending discrimination and hope to support the communities that have been subjugated to this. 
+#### The selected topic and the reasoning for that selection
+In this project, team 5 will be analyzing the criterias for eligibility for home mortgages. The reason why we chose to analyze loan procceses is to identify what are potential factors on these applications. By the year, the reality of wanting to have our dream home for our families becomes a much more serious topic. Understanding loans and acknowledging what components increases our chances of securing credit at the most favorable terms can save you thousands. As a team, we will examine three different indicators: diversity, location, and income. For diveristy, we want to identify if there is bias on applicants that come from a diverse background involving gender, race, and ethicity. We will also identify if the county of where this loan is coming from has any affect on the applications results and lastly, on the applicants income. By studying this dataset, the team hopes to further understand loan applications and help others identify what factors can potentially predict the likelyhood of getting an offer. As well, to eliminate lending discrimination in the world. 
 
-A description of the data (20 points)
+#### A description of the data
+Our data is 
 
-
-The questions that the team plans to answer with the project (20 points)
+#### The questions that the team plans to answer with the project
 The questions that we will be answering will be:
 * Is there a gender bias present in the data?
 * Is there an ethnicity bias present in the data?
