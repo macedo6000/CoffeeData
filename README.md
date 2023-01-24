@@ -125,3 +125,9 @@ A description of the data (20 points)
 
 
 The questions that the team plans to answer with the project (20 points)
+The questions that we will be answering will be:
+* Is there a gender bias present in the data?
+* Is there an ethnicity bias present in the data?
+* Is there a racial bias present in the data?
+* Does the applicants county/address have an affect on approval? 
+* Does the applicants income have an affect on approval? 
