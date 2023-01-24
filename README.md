@@ -94,6 +94,8 @@ Questions for presentation:
 ### References
 - https://www.consumerfinance.gov/data-research/hmda/historic-data/?geo=ca&records=all-records&field_descriptions=labels
 
+---
+
 ### Presentation
 
 #### The selected topic and the reasoning for that selection
