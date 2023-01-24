@@ -1,4 +1,4 @@
-# Evaluating the criteria for eligibility for Home Mortgages
+# Evaluating the Criteria for Eligibility for Home Mortgages
 
 ### Status - *Segment 1*
 
