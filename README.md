@@ -1,4 +1,4 @@
-# CoffeeData
+# Evaluating the criteria for eligibility for Home Mortgages
 
 ### Status - *Segment 1*
 
@@ -114,3 +114,14 @@ Questions for presentation:
 ---
 
 ### References
+- https://www.consumerfinance.gov/data-research/hmda/historic-data/?geo=ca&records=all-records&field_descriptions=labels
+
+### Presentation
+
+The selected topic and the reasoning for that selection (20 points)
+The reason why we chose to analyze the critierias for eligibility for home mortgages is to identify if there is bias on loan applications. This bias can come from judging applicants based on their backgrounds such as their gender, race, and ethicity. A loan application should be accepted or denied soley based on income, credit score, and other financial factors. By studying this dataset, the team will try to identify lending discrimination and hope to support the communities that have been subjugated to this. 
+
+A description of the data (20 points)
+
+
+The questions that the team plans to answer with the project (20 points)
