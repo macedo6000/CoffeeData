@@ -1,0 +1,237 @@
+Column Name,Unique_Count,Unique_Values
+as_of_year,1,[2017]
+respondent_id,1212,"['0000451965' '0000146672' '13-6131491' ... '0000057411' '0000023621'
+ '14-1667104']"
+agency_name,6,"['Consumer Financial Protection Bureau'
+ 'Department of Housing and Urban Development'
+ 'Office of the Comptroller of the Currency' 'Federal Reserve System'
+ 'National Credit Union Administration'
+ 'Federal Deposit Insurance Corporation']"
+agency_abbr,6,['CFPB' 'HUD' 'OCC' 'FRS' 'NCUA' 'FDIC']
+agency_code,6,[9 7 1 2 5 3]
+loan_type_name,4,['Conventional' 'FHA-insured' 'VA-guaranteed' 'FSA/RHS-guaranteed']
+loan_type,4,[1 2 3 4]
+property_type_name,3,"['One-to-four family dwelling (other than manufactured housing)'
+ 'Manufactured housing' 'Multifamily dwelling']"
+property_type,3,[1 2 3]
+loan_purpose_name,3,['Home improvement' 'Home purchase' 'Refinancing']
+loan_purpose,3,[2 1 3]
+owner_occupancy_name,3,"['Owner-occupied as a principal dwelling'
+ 'Not owner-occupied as a principal dwelling' 'Not applicable']"
+owner_occupancy,3,[1 2 3]
+loan_amount_000s,4752,[  570.   185.  1079. ... 21490.  9785.  3571.]
+preapproval_name,3,"['Not applicable' 'Preapproval was not requested'
+ 'Preapproval was requested']"
+preapproval,3,[3 2 1]
+action_taken_name,8,"['Application denied by financial institution' 'Loan originated'
+ 'Application approved but not accepted'
+ 'Application withdrawn by applicant' 'File closed for incompleteness'
+ 'Loan purchased by the institution'
+ 'Preapproval request denied by financial institution'
+ 'Preapproval request approved but not accepted']"
+action_taken,8,[3 1 2 4 5 6 7 8]
+msamd_name,30,"['Sacramento, Roseville, Arden-Arcade - CA'
+ 'Riverside, San Bernardino, Ontario - CA'
+ 'Oakland, Hayward, Berkeley - CA' 'Fresno - CA'
+ 'Santa Cruz, Watsonville - CA' 'Los Angeles, Long Beach, Glendale - CA'
+ 'San Diego, Carlsbad - CA' 'Vallejo, Fairfield - CA'
+ 'San Francisco, Redwood City, South San Francisco - CA' nan
+ 'Anaheim, Santa Ana, Irvine - CA' 'Modesto - CA' 'Chico - CA'
+ 'San Jose, Sunnyvale, Santa Clara - CA' 'Salinas - CA'
+ 'Oxnard, Thousand Oaks, Ventura - CA' 'Madera - CA' 'Yuba City - CA'
+ 'Santa Rosa - CA' 'Visalia, Porterville - CA'
+ 'San Luis Obispo, Paso Robles, Arroyo Grande - CA' 'Merced - CA'
+ 'Bakersfield - CA' 'Stockton, Lodi - CA' 'El Centro - CA'
+ 'Hanford, Corcoran - CA' 'Santa Maria, Santa Barbara - CA' 'Redding - CA'
+ 'San Rafael - CA' 'Napa - CA']"
+msamd,39,"[40900. 40140. 36084. 23420. 42100. 31084. 41740. 46700. 41884.    nan
+ 11244. 33700. 17020. 41940. 41500. 37100. 31460. 49700. 42220. 47300.
+ 42020. 32900. 41860. 12540. 44700. 20940. 21700. 25260. 42200. 39820.
+ 42034. 34900. 31080. 18860. 43760. 46020. 39780. 46380. 17340.]"
+state_name,1,['California']
+state_abbr,1,['CA']
+state_code,1,[6]
+county_name,59,"['Sacramento County' 'Riverside County' 'Alameda County'
+ 'Contra Costa County' 'Fresno County' 'San Bernardino County'
+ 'Santa Cruz County' 'Los Angeles County' 'San Diego County'
+ 'Solano County' 'San Mateo County' 'Amador County' 'Orange County'
+ 'Stanislaus County' 'Butte County' 'El Dorado County'
+ 'Santa Clara County' 'Monterey County' 'Ventura County' 'Madera County'
+ 'Colusa County' 'Tehama County' 'Humboldt County' 'Sutter County'
+ 'Sonoma County' 'Tulare County' 'Placer County' 'Nevada County'
+ 'San Luis Obispo County' 'Merced County' 'San Benito County'
+ 'Calaveras County' 'Glenn County' 'Alpine County' 'Del Norte County'
+ 'Kern County' 'San Joaquin County' 'San Francisco County' 'Yolo County'
+ 'Imperial County' 'Kings County' 'Santa Barbara County' 'Shasta County'
+ 'Marin County' 'Napa County' nan 'Plumas County' 'Siskiyou County'
+ 'Tuolumne County' 'Trinity County' 'Sierra County' 'Mono County'
+ 'Lassen County' 'Lake County' 'Mendocino County' 'Yuba County'
+ 'Mariposa County' 'Modoc County' 'Inyo County']"
+county_code,59,"[ 67.  65.   1.  13.  19.  71.  87.  37.  73.  95.  81.   5.  59.  99.
+   7.  17.  85.  53. 111.  39.  11. 103.  23. 101.  97. 107.  61.  57.
+  79.  47.  69.   9.  21.   3.  15.  29.  77.  75. 113.  25.  31.  83.
+  89.  41.  55.  nan  63.  93. 109. 105.  91.  51.  35.  33.  45. 115.
+  43.  49.  27.]"
+census_tract_number,6466,[  61.01  432.27 4038.   ... 1902.01 9801.   5728.  ]
+applicant_ethnicity_name,4,"['Not Hispanic or Latino'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Hispanic or Latino' 'Not applicable']"
+applicant_ethnicity,4,[2 3 1 4]
+co_applicant_ethnicity_name,5,"['Not Hispanic or Latino' 'No co-applicant'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Hispanic or Latino' 'Not applicable']"
+co_applicant_ethnicity,5,[2 5 3 1 4]
+applicant_race_name_1,7,"['White' 'Asian'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Black or African American' 'American Indian or Alaska Native'
+ 'Not applicable' 'Native Hawaiian or Other Pacific Islander']"
+applicant_race_1,7,[5 2 6 3 1 7 4]
+applicant_race_name_2,6,"[nan 'Asian' 'White' 'Black or African American'
+ 'Native Hawaiian or Other Pacific Islander'
+ 'American Indian or Alaska Native']"
+applicant_race_2,6,[nan  2.  5.  3.  4.  1.]
+applicant_race_name_3,6,"[nan 'Native Hawaiian or Other Pacific Islander' 'White'
+ 'Black or African American' 'American Indian or Alaska Native' 'Asian']"
+applicant_race_3,6,[nan  4.  5.  3.  1.  2.]
+applicant_race_name_4,6,"[nan 'Native Hawaiian or Other Pacific Islander' 'White'
+ 'Black or African American' 'Asian' 'American Indian or Alaska Native']"
+applicant_race_4,6,[nan  4.  5.  3.  2.  1.]
+applicant_race_name_5,6,"[nan 'White' 'Asian' 'American Indian or Alaska Native'
+ 'Native Hawaiian or Other Pacific Islander' 'Black or African American']"
+applicant_race_5,6,[nan  5.  2.  1.  4.  3.]
+co_applicant_race_name_1,8,"['White' 'No co-applicant'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Black or African American' 'Native Hawaiian or Other Pacific Islander'
+ 'Not applicable' 'Asian' 'American Indian or Alaska Native']"
+co_applicant_race_1,8,[5 8 6 3 4 7 2 1]
+co_applicant_race_name_2,6,"[nan 'White' 'Asian' 'Native Hawaiian or Other Pacific Islander'
+ 'Black or African American' 'American Indian or Alaska Native']"
+co_applicant_race_2,6,[nan  5.  2.  4.  3.  1.]
+co_applicant_race_name_3,6,"[nan 'Black or African American' 'White'
+ 'Native Hawaiian or Other Pacific Islander' 'Asian'
+ 'American Indian or Alaska Native']"
+co_applicant_race_3,6,[nan  3.  5.  4.  2.  1.]
+co_applicant_race_name_4,6,"[nan 'White' 'Native Hawaiian or Other Pacific Islander'
+ 'American Indian or Alaska Native' 'Asian' 'Black or African American']"
+co_applicant_race_4,6,[nan  5.  4.  1.  2.  3.]
+co_applicant_race_name_5,6,"[nan 'White' 'American Indian or Alaska Native'
+ 'Black or African American' 'Asian'
+ 'Native Hawaiian or Other Pacific Islander']"
+co_applicant_race_5,6,[nan  5.  1.  3.  2.  4.]
+applicant_sex_name,4,"['Female'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Male' 'Not applicable']"
+applicant_sex,4,[2 3 1 4]
+co_applicant_sex_name,5,"['Male' 'No co-applicant'
+ 'Information not provided by applicant in mail, Internet, or telephone application'
+ 'Female' 'Not applicable']"
+co_applicant_sex,5,[1 5 3 2 4]
+applicant_income_000s,4091,[  144.    51.   278. ... 11091.  9004.  2715.]
+purchaser_type_name,10,"['Loan was not originated or was not sold in calendar year covered by register'
+ 'Commercial bank, savings bank or savings association'
+ 'Fannie Mae (FNMA)'
+ 'Life insurance company, credit union, mortgage bank, or finance company'
+ 'Ginnie Mae (GNMA)' 'Freddie Mac (FHLMC)' 'Other type of purchaser'
+ 'Private securitization' 'Affiliate institution' 'Farmer Mac (FAMC)']"
+purchaser_type,10,[0 6 1 7 2 3 9 5 8 4]
+denial_reason_name_1,10,"['Credit history' 'Credit application incomplete' nan 'Collateral' 'Other'
+ 'Debt-to-income ratio' 'Insufficient cash (downpayment, closing costs)'
+ 'Unverifiable information' 'Employment history'
+ 'Mortgage insurance denied']"
+denial_reason_1,10,[ 3.  7. nan  4.  9.  1.  5.  6.  2.  8.]
+denial_reason_name_2,10,"['Other' nan 'Debt-to-income ratio' 'Credit history'
+ 'Insufficient cash (downpayment, closing costs)'
+ 'Credit application incomplete' 'Unverifiable information'
+ 'Employment history' 'Collateral' 'Mortgage insurance denied']"
+denial_reason_2,10,[ 9. nan  1.  3.  5.  7.  6.  2.  4.  8.]
+denial_reason_name_3,10,"[nan 'Credit history' 'Debt-to-income ratio' 'Other'
+ 'Insufficient cash (downpayment, closing costs)'
+ 'Unverifiable information' 'Collateral' 'Employment history'
+ 'Credit application incomplete' 'Mortgage insurance denied']"
+denial_reason_3,10,[nan  3.  1.  9.  5.  6.  4.  2.  7.  8.]
+rate_spread,790,"[  nan  1.58  1.84  2.15  1.53  2.68  1.98  1.86  3.53  1.61  2.19  1.55
+  1.5   5.07  2.24  1.75  1.72  1.74  1.82  2.67  1.79  1.78  1.7   2.09
+  2.21  1.8   2.14  1.56  1.99  1.77  2.35  2.01  2.36  1.64  1.83  1.52
+  7.87  1.76  2.37  1.54  4.95  1.93  2.2   1.95  1.57  2.03  1.65  2.33
+  1.94  2.38  2.64  1.63  2.16  3.14  2.11  2.25  1.62  1.51  2.    1.69
+  3.68  6.77  1.89  3.64  1.85  8.45  2.13  1.97  2.41  1.81  1.91  1.6
+  2.26  2.5   2.18  2.08  1.71  3.76  3.46  1.59  1.88  7.2   2.06  3.86
+  2.22  2.48  2.76  4.35  1.87  1.66  2.87  2.45  8.28  4.69  1.68  2.39
+  2.27  2.12  2.02  2.34  2.32  4.52  2.23  2.05  8.08  1.96  2.54  2.53
+  3.24  3.98  2.29  4.    4.32  3.65  2.57  2.83  3.74  5.25  5.14  2.07
+  2.1   4.04  4.59  4.92  1.92  5.17  5.54  3.5   1.73  5.75  2.49  2.3
+  4.75  2.62  3.45  2.9   3.12  6.49  6.27  3.21  3.8   7.01  4.84  2.17
+  4.42  4.57  4.96  5.52  2.93  6.6   2.65  1.67  1.9   5.71  4.54  4.08
+  6.91  4.1   3.26  2.04  2.77  6.36  2.78  6.39  3.28  4.12  5.51  2.46
+  2.69  3.73  6.84  2.31  4.8   3.83  2.81  2.28  2.94  3.31  4.03  3.58
+  6.53  4.21  9.99  5.37  4.47  2.59  5.65  4.49  3.33  5.31  5.05  2.61
+  6.48  5.76  4.6   2.43  5.57  3.    3.79  4.89  6.98  3.02  4.73  7.91
+  6.23  2.42  3.57  4.78  4.63  2.4   2.63  8.1   6.24  5.68  2.91  3.88
+  5.06  2.98  4.37  4.9  10.02  3.16  2.58  6.44  3.52  2.55  3.9   8.75
+  3.27  8.25  3.38  3.25  4.71  6.58  2.66  8.48  6.89  4.79  5.48  2.73
+  2.56  3.7   2.72  3.69  3.55  5.56  5.72  8.11  6.88  6.31  6.26  4.43
+  4.22  6.34  3.42  4.25  4.4   3.2   2.96  4.09 10.77  2.79  7.02  2.47
+  2.52  2.8   7.56  2.86  2.7   5.21  6.99  3.78  6.42  3.11  3.43  6.47
+  3.36  6.9   4.28  5.93  3.77  8.27  4.39  7.27  3.99  6.02  2.95  5.01
+  3.91  2.51  3.84  3.04  4.14  6.83  5.11  5.74  6.5   5.83  2.88  2.44
+  4.41  4.02  6.35  7.94  3.34  7.36  3.85  4.98  4.19  8.43  3.09  3.39
+  8.07  5.78  3.56  4.07  4.77  6.64  4.66  8.49  4.74  4.51  4.05  3.05
+  4.7   6.38  2.84  7.29  2.92  3.01  9.71  4.38  6.1   6.45  3.94  6.76
+  5.22  5.23  5.27  4.44  2.97  6.51  3.96  2.75  3.19  5.04  6.41  3.81
+  6.46  3.62  6.57  4.17  7.47  7.59  6.03  4.29  4.46  3.93  4.55  2.71
+  4.26  3.22  5.19  5.43  7.84  5.45  3.13  8.46  6.    6.56  3.1   3.03
+  5.62  7.32  2.85  7.33 17.02  4.82  2.74  4.61  3.75  4.88  5.3   8.33
+  3.87  7.69  6.21  8.41  4.64  5.66  7.38  6.7   3.18  3.54  3.92  3.61
+  5.47  3.95  4.72  4.58  2.82  3.82  4.5   9.76  3.6   4.76  5.89  6.14
+  3.59  4.87  4.93  2.99  7.26  5.    3.63  2.6   6.12  6.37  3.49  5.32
+  4.18  4.67  9.91  4.85  3.23  2.89  3.71  7.58  4.45  3.08  5.92  5.5
+  4.81  3.89  4.68  5.99  5.15  6.33 10.19  7.25  4.27  5.59 10.95  5.26
+  8.29  5.38 10.03  5.82  4.33  4.36  6.52  3.47  7.11  8.47  8.91  5.24
+  3.32  6.86  4.31  6.75  3.72  5.41  3.4   3.15  4.53  4.48  7.04  6.19
+  5.8   3.44  5.02  6.85  9.58  6.72  3.51  5.63  6.09 10.1   6.8   6.29
+  5.84  4.99  7.96  8.16  3.97  7.17  5.97 11.27  5.4   3.29  5.9   6.74
+  3.35  8.37  3.37  5.86  7.72  8.61  9.    5.73  5.13  5.95  6.62  6.04
+  3.66  5.6   4.2   3.06  6.43  5.44  5.29  3.07  4.86  8.94  9.08  4.11
+  6.63  7.57  4.01  7.4   6.54  7.79  5.36  6.25  7.66  7.82  4.15  6.93
+  6.61  4.56  5.88  7.63  6.92  6.96  7.06  7.19  7.13  8.06  7.31  8.95
+  5.87  7.41  5.09  5.7   3.48  9.96  6.78  8.92  6.22 16.46  4.34  6.65
+  6.81  7.99  4.83  4.62  8.84  4.94  6.71  5.16  6.79  5.46  6.2   8.66
+  5.34  5.69  7.24  5.91  6.13  7.64  7.9   4.23  4.13 10.18  7.7   7.09
+  6.07  9.73  4.97  7.34  4.16  5.53  4.65  3.67  6.59  5.85  4.24  5.28
+  5.35  6.17  7.73  8.39  6.67  3.17  5.58  8.64  7.05  7.07  3.3   7.15
+  7.03 10.12 11.98  4.3   7.44  6.68  5.08 11.49  5.39  7.71  8.81  5.1
+  7.42 16.76  7.76  5.42 11.53 10.58  7.97  3.41  7.43  6.94  5.12  6.11
+  4.91  7.39  7.16  7.48  8.38  6.66  7.23  5.61  5.96  6.16  5.18  5.67
+  6.32  8.34  6.95  9.89  6.69  6.87  8.52  7.46  8.8   6.4   4.06  6.55
+  6.08 11.14  7.61  7.78  7.45  5.49  7.    8.03  7.55  8.18  7.28  9.2
+  6.18  6.01  5.03  8.02  6.82  8.32  8.14  5.64  7.68 10.25  6.05  5.98
+  9.64  7.18  8.57  8.31  6.3   6.28  8.22  8.69  5.2   9.52  7.51  6.06
+ 10.53  8.36  9.59  8.26  7.54  7.35  8.44  8.17  7.85  7.1   8.88  8.58
+  7.52  5.94  8.04  7.81  5.79 12.49  7.75  7.74  9.33  9.09  8.86  7.08
+  8.35 11.19  7.89  9.95  8.19  5.81 10.85  7.83  7.3   9.81  8.2  12.11
+  7.12 11.77  8.79  6.15  8.42 12.26 10.76  5.55  7.77 12.82  8.12  7.5
+  8.73  8.4   9.24 10.04  8.83  6.97 10.81 10.56  9.27  7.21  7.6  10.32
+  8.3   9.17  8.21  8.23 10.34  7.93  8.77  9.68  9.35  8.63 14.33 11.02
+ 10.68  7.67 11.15  7.95  8.24  9.34  7.98  6.73  9.78  8.72  8.82 12.32
+ 12.74  5.33  7.8   9.66 10.14 10.23 10.06  8.53  7.49 12.76  9.77  9.39
+  7.86  7.37  9.13 11.33  9.11  8.13  8.51  8.    8.15  7.14]"
+hoepa_status_name,2,['Not a HOEPA loan' 'HOEPA loan']
+hoepa_status,2,[2 1]
+lien_status_name,4,"['Secured by a first lien' 'Secured by a subordinate lien'
+ 'Not applicable' 'Not secured by a lien']"
+lien_status,4,[1 2 4 3]
+edit_status_name,1,[nan]
+edit_status,1,[nan]
+sequence_number,1,[nan]
+population,4648,[4824. 7404. 3372. ... 1867.   22. 1041.]
+minority_population,5289,"[37.22999954 57.52000046 33.18999863 ... 36.36000061 84.76999664
+ 82.41999817]"
+hud_median_family_income,31,"[ 75200.  63200.  97400.  50000.  83300.  64300.  79300.  80400. 113100.
+  59900.  88000.  57500.  62600. 111200.  63100.  85600.  51300.  55500.
+     nan  83900.  47300.  83200.  48500.  53000.  61100.  49700.  50200.
+  73900.  61800. 131500.  91000.]"
+tract_to_msamd_income,6129,"[ 57.41999817 116.01000214 141.74000549 ...  60.06999969  41.72999954
+  71.16999817]"
+number_of_owner_occupied_units,2049,[ 818. 1215.  592. ...   74.   19.    6.]
+number_of_1_to_4_family_units,2545,[1626. 1743. 1105. ...   41. 7379.   33.]
+application_date_indicator,1,[nan]
