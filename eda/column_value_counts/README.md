@@ -12,11 +12,11 @@ __Column Name: *agency_abbr*__
 Folder Name: agency_abbr
 File Name: "value_counts_agency_abbr.csv"
 
-    |Value|Count|
-    |-----|-----|
-    |HUD|1002031|
-    |CFPB|544100|         
-    |NCUA|74078|
-    |FDIC|47388|
-    |OCC|30679|
-    |FRS|11226|
+|Value|Count|
+|-----|-----|
+|HUD|1002031|
+|CFPB|544100|         
+|NCUA|74078|
+|FDIC|47388|
+|OCC|30679|
+|FRS|11226|
