@@ -5,7 +5,7 @@ The Home Mortgage Database was obtained from the federal Consumer Financial Prot
 
 ## Database Branch Overview 
 
-The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from the CFPB's website, www.consumerfinance.gov[^3].
+The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from the CFPB's website[^3], www.consumerfinance.gov.
 
 Due to the large size of the dataset, an Amazon Web Services Relational Database will be used for this project. 
 
