@@ -1,11 +1,11 @@
 # Home Mortgage Data Project - Segment 1
 
-The Home Mortgage Database was obtained from Consumer Financial Protection Bureau (CFPB), which publically releases annual mortgage data as required by the Home Mortgage Disclosure Act.[^1] [^2] The most recent release for California, 2017, saw a dataset containing over 1.7 million records of HMDA data. [^3]
+The Home Mortgage Disclosure Act was passed in 1975 to protect homeowners by mandating that financial institutions make home mortgage data publicly available[^1].
+The Home Mortgage Database was obtained from the federal Consumer Financial Protection Bureau (CFPB), which annually collects, aggregates, and makes publicly available mortgage data as required by the HMDA. The most recent release for California, 2017, saw a dataset containing over 1.7 million records of mortgage data[^3].
 
 ## Database Branch Overview 
 
-The origin of this database is HMDA Mortgage Data in California in 2017. The dataset was downloaded in CSV format from the Consumer Financial Protection Bureau's website. 
-
+The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from the CFPB's website, www.consumerfinance.gov[^2].
 
 
 Due to the large size of the dataset, an Amazon Web Services Relational Database will be used for this project. 
@@ -27,3 +27,7 @@ The data shows that
 [^2] Consumer Financial Protection Bureau. (n.d.). HMDA Loan Application Register Format - Consumer Financial Protection. HMDA Loan Application Register Format. Retrieved January 26, 2023, from https://files.consumerfinance.gov/hmda-historic-data-dictionaries/lar_record_format.pdf
 
 [^3] Consumer Financial Protection Bureau. (2019, March 21). HMDA Loan Application Register. Washington, DC.
+
+[^*] Consumer Financial Protection Bureau (CFPB). (n.d.). Variable List for HMDA Loan Application Register Data. HMDA Loan Application Register Format. Retrieved January 26, 2023, from https://files.consumerfinance.gov/hmda-historic-data-dictionaries/lar_record_format.pdf 
+
+[*^] 
