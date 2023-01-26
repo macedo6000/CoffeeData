@@ -10,15 +10,18 @@ The origin of this database is California HMDA Mortgage Data from 2017. The data
 
 The root folder of the database branch 
   
-
-├── src
-│   ├── controller
-│   │   ├── **/*.css
-│   ├── views
-│   ├── model
+```
+├── root
+│   ├── database
+│   │   ├── data
+│   |   ├── data_dictionaries
+│   |   ├── eda
+│   |   ├── data_cleaning.ipynb
+│   |   ├── exploratory_data_analysis.ipynb
+│   |   ├── README.md
 │   ├── index.js
-├── public
 
+```
 
 
 ## Results
