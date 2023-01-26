@@ -6,6 +6,11 @@ The Home Mortgage Database was obtained from the federal Consumer Financial Prot
 
 The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from CFPB's website[^3], www.consumerfinance.gov. After extensive cleaning, the original dataset "raw_data.csv" contained 1,709,502 rows of string, integer, and float values, spread across 78 columns. This file was further preprocessed for exploratory data analysis (EDA). The preliminary results of that analysis can be found below: 
 
+## Dataset & Data Structures
+
+
+
+
 ## Database Branch Overview
 
 The folders of the database branch are structured as follows:
@@ -15,6 +20,7 @@ The folders of the database branch are structured as follows:
 │   ├── database
 │   |   ├── README.md
 │   │   ├── data
+│   │   │   ├── README.md
 │   │   │   ├── demographics_database.zip
 │   │   │   ├── loan_info_database.zip
 │   |   ├── data_dictionaries
