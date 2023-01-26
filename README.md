@@ -10,7 +10,7 @@ The origin of this database is California HMDA Mortgage Data from 2017. The data
 
 The root folder of the database branch 
   
-```
+
 ├── src
 │   ├── controller
 │   │   ├── **/*.css
@@ -18,7 +18,7 @@ The root folder of the database branch
 │   ├── model
 │   ├── index.js
 ├── public
-```
+
 
 
 ## Results
