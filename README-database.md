@@ -1,4 +1,4 @@
-# Home Mortgage Data Project - Segment 1
+# HMDA Loan Application Register Project - Segment 1
 
 The Home Mortgage Disclosure Act was passed in 1975 to protect homeowners by mandating that financial institutions make home mortgage data publicly available[^1].
 
