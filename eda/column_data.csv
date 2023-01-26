@@ -220,9 +220,10 @@ hoepa_status,2,[2 1]
 lien_status_name,4,"['Secured by a first lien' 'Secured by a subordinate lien'
  'Not applicable' 'Not secured by a lien']"
 lien_status,4,[1 2 4 3]
-edit_status_name,1,[nan]
-edit_status,1,[nan]
-sequence_number,1,[nan]
+edit_status_name,1,['preprocessing']
+edit_status,1,[1]
+sequence_number,1709499,"[337779113932 501939311290 826818207654 ... 927480565459 712903396697
+ 792268432322]"
 population,4648,[4824. 7404. 3372. ... 1867.   22. 1041.]
 minority_population,5289,"[37.22999954 57.52000046 33.18999863 ... 36.36000061 84.76999664
  82.41999817]"
