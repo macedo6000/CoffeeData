@@ -28,5 +28,4 @@ The data shows that
 [^3] Consumer Financial Protection Bureau. (2019, March 21). HMDA Loan Application Register. Washington, DC.
 
 [^*] Consumer Financial Protection Bureau (CFPB). (n.d.). Variable List for HMDA Loan Application Register Data. HMDA Loan Application Register Format. Retrieved January 26, 2023, from https://files.consumerfinance.gov/hmda-historic-data-dictionaries/lar_record_format.pdf 
-
-[*^] 
+ 
