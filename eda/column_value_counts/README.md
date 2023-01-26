@@ -9,11 +9,14 @@ Each sub-folder contains a CSV file with value counts for the corresponding colu
 #### Example
 
 __Column Name: *agency_abbr*__
-|Value|Count|
-|-----|-----|
-|HUD|1002031|
-|CFPB|544100|           ---> 
-|NCUA|74078|
-|FDIC|47388|
-|OCC|30679|
-|FRS|11226|
+Folder Name: agency_abbr
+File Name: "value_counts_agency_abbr.csv"
+
+  |Value|Count|
+  |-----|-----|
+  |HUD|1002031|
+  |CFPB|544100|           ---> 
+  |NCUA|74078|
+  |FDIC|47388|
+  |OCC|30679|
+  |FRS|11226|
