@@ -8,7 +8,7 @@ The origin of this database is California HMDA Mortgage Data from 2017. The data
 
 ## Database Branch Overview
 
-The folder of the database branch is structured as follows
+The folders of the database branch are structured as follows:
   
 ```
 ├── root
@@ -39,8 +39,14 @@ The folder of the database branch is structured as follows
 │   │   │   ├── columnar_value_counts.zip
 │   |   ├── data_cleaning.ipynb
 │   |   ├── exploratory_data_analysis.ipynb
+│   ├── Raj
+│   ├── Angie
+│   ├── Nicholas
+│   ├── Sayan
+│   ├── James
 
-│   ├── index.js
+|  ///
+
 
 ```
 
