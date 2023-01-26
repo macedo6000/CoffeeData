@@ -8,17 +8,38 @@ The origin of this database is California HMDA Mortgage Data from 2017. The data
 
 ## Database Branch Overview
 
-The root folder of the database branch 
+The folder of the database branch is structured as follows
   
 ```
 ├── root
 │   ├── database
+│   |   ├── README.md
 │   │   ├── data
+│   │   │   ├── demographics_database.zip
+│   │   │   ├── loan_info_database.zip
 │   |   ├── data_dictionaries
+│   │   │   ├── README.md
+│   │   │   ├── raw_data_column_typeformat.pdf
+│   │   │   ├── raw_data_dictionary
+│   │   │   ├── raw_data_types
 │   |   ├── eda
+│   │   │   ├── column_value_counts
+|   │   │   │   ├── README.md
+|   │   │   │   ├── action_taken
+|   │   │   │   |   ├── Value_Counts_action_taken.csv
+|   │   │   │   ├── action_taken_name
+|   │   │   │   |   ├── Value_Counts_action_taken_name.csv
+|   │   │   │ /// x 76
+|   │   │   │   ├── state_code
+|   │   │   │   |   ├── Value_Counts_state_code.csv
+|   │   │   │   ├── state_name
+|   │   │   │   |   ├── Value_Counts_state_name.csv
+│   │   │   ├── columnar_data.csv
+│   │   │   ├── columnar_VC_high_low.zip
+│   │   │   ├── columnar_value_counts.zip
 │   |   ├── data_cleaning.ipynb
 │   |   ├── exploratory_data_analysis.ipynb
-│   |   ├── README.md
+
 │   ├── index.js
 
 ```
