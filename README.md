@@ -4,13 +4,29 @@ The Home Mortgage Disclosure Act was passed in 1975 to protect homeowners by man
 
 The Home Mortgage Database was obtained from the federal Consumer Financial Protection Bureau (CFPB), which annually collects, aggregates, and makes publicly available mortgage data as required by the HMDA. The most recent release for California, 2017, saw a dataset containing over 1.7 million records of mortgage data[^2].
 
-The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from CFPB's website[^3], www.consumerfinance.gov. After extensive cleaning, the original dataset "raw_data.csv" contained 1,709,502 rows of string, integer, and float values, spread across 78 columns. Due to size limitations on 
+The origin of this database is California HMDA Mortgage Data from 2017. The dataset was downloaded in CSV format from CFPB's website[^3], www.consumerfinance.gov. After extensive cleaning, the original dataset "raw_data.csv" contained 1,709,502 rows of string, integer, and float values, spread across 78 columns.
 
 This file was further preprocessed for exploratory data analysis (EDA).The preliminary results of that analysis can be found below: 
 
+## Data Directories 
+
+Please download the following large csv files and place in /data/ directory
+
+HMDA Data: https://hmda-data-bucket.s3.amazonaws.com/data/hmda_2017_ca_all-records_labels.csv
+
+Cleaned Raw Data: https://hmda-data-bucket.s3.amazonaws.com/data/raw_data.csv
+
+Separated Numeric Data: https://hmda-data-bucket.s3.amazonaws.com/data/numeric_database.csv
+
+Separated Loan-Info Data: https://hmda-data-bucket.s3.amazonaws.com/data/loan_info_database.csv
+
+Separated Demographic Data: https://hmda-data-bucket.s3.amazonaws.com/data/demographics_database.csv
+
+Label Names & Number Data: https://hmda-data-bucket.s3.amazonaws.com/data/name_number_table.csv
+
 ## Dataset & Data Structures
 
-An extensive, real-world dataset provides a challenging opportunity for machine learning algorithms. To this end, any dataset 
+An extensive, real-world dataset provides a challenging opportunity for machine learning algorithms. 
 
 
 ## Database Branch Overview
