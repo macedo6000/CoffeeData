@@ -10,6 +10,13 @@ This file was further preprocessed for exploratory data analysis (EDA).The preli
 
 ## Data Directories 
 
+AWS Postgres RDS
+
+Endpoint: hmda-loan-database.cfo8yzx2osax.us-east-1.rds.amazonaws.com
+Username: Postgres
+Password: Password
+
+S3 File Storage:
 Please download the following large csv files and place in /data/ directory
 
 HMDA Data: https://hmda-data-bucket.s3.amazonaws.com/data/hmda_2017_ca_all-records_labels.csv
