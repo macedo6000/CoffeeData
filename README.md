@@ -21,7 +21,7 @@ Please download the following large csv files and place in /data/ directory
 
 HMDA Data: https://hmda-data-bucket.s3.amazonaws.com/data/hmda_2017_ca_all-records_labels.csv
 
-Cleaned Raw Data: https://hmda-data-bucket.s3.amazonaws.com/data/raw_data.csv
+Cleaned Data: https://hmda-data-bucket.s3.amazonaws.com/data/cleaned_data.csv
 
 Separated Numeric Data: https://hmda-data-bucket.s3.amazonaws.com/data/numeric_database.csv
 
