@@ -1,10 +1,7 @@
 # HMDA Data - Machine Learning Model Analysis with Decision Trees - Segment 2
 
-Machine learning is the use of statistical algorithms to perform tasks such as learning from data patterns and making predictions. From the three learning categories, we utilized supervised learning to understand the data patterns of ours dataset. These patterns are are formed from the applicants demographic, personal, and financial infromation. After, our decision trees determined if the loan was approved or reject. Both tools are beneficial to home mortgage approvals because it helps denote what factors are more important than others when seeking a loan. This can help future applicants to better prepare for future loans. 
+Machine learning is the use of statistical algorithms to perform tasks such as learning from data patterns and making predictions. From the three learning categories, we utilized supervised learning to understand the data patterns of our dataset. These patterns are formed from the applicants demographic, personal, and financial infromation. After, our decision trees determined if the loan was approved or rejected. Both tools are beneficial to home mortgage approvals because it helps denote what factors are more important than others when seeking a loan. This can help future applicants to better prepare for future loans. 
 
-[intro about ML, decision trees and what makes them good for home mortgage approvals.
-
-note. something in module 18 about decision trees not being liable to problems with linearity of dataset]
 
 ## Overview
 
@@ -140,3 +137,5 @@ After removing the hoepa_status column from the *input features* dataset and re-
     |Avg/Total   |0.83|0.83|0.83|0.83|377256|
     
 ## Summary 
+
+The Easy Ensemble AdaBoost Classification (EEABC) Model performed better than the Balanced Random Forest Classification (BRFC) Model in both the full and reduced datasets. EEABC incl hoepa_status received an accuracy score of 82.89% and precision of 0.88, while the BRFC incl. hoepa_status received an accuracy score of 82.58% and precision of 0.86. EEABC not incl. hoepa_status performed slightly worse that its counterpart, receiving accuracy and precision scores of 82.87% and 0.87, respectively. Conversely, BRFC not incl. hoepa_status received a slightly higher accuracy score of 82.61%, with precision remaining the same. 
