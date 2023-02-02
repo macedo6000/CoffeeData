@@ -89,7 +89,9 @@ The BRFC model also presents the importance of each column in the *input feature
 |0.002376|                   property_type|
 |0.000204|                    hoepa_status|
 
-After reviewing feature importances, the least important feature, *hoepa_status* was removed before retraining the BRFC model 
+After reviewing feature importances, the least important feature, *hoepa_status* was removed before retraining the BRFC model. See Figure 1.
+
+![Figure 1: Feature Importances](eda/feature_importances.png)
 
 The results of the BRFC (No hoepa_status) are as follows:
 * Accuracy Score = 0.8260998519680105
