@@ -62,7 +62,7 @@ The results of the Balanced Random Forest Classifier are as follows:
 #### Feature Importances 
 
 The Balanced Random Forest Classifier model also presents the importance of each column in the *input features* dataset. See below:
-|importance|                     parameter|
+|Importance|               *Input Feature*|
 |----------|------------------------------|
 |0.401848|                  purchaser_type|
 |0.101836|                loan_amount_000s|
