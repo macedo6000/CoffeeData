@@ -7,6 +7,7 @@ note. something in module 18 about decision trees not being liable to problems w
 ## Overview
 
 As part of an extensive ETL process, important columns from the original dataset were extracted into a Machine Learning Dataset. Accordingly, the resulting dataset was composed entirely of columns containing categorical data with numerical datatypes. The numeric dataset was further split into *input variables* and *target variable*, listed below: 
+
 *Input Variables*
 
 * population
