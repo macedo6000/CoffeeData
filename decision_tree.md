@@ -124,16 +124,17 @@ The results of the Easy Ensemble AdaBoost Classifier are as follows:
 
 
 After removing the hoepa_status column from the *input features* dataset and re-training the Easy Ensemble AdaBoost Classifier, the results are as follows:
-* Accuracy Score = 
+* Accuracy Score = 0.8286977318525881
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |-------------------|--------------------|-------------------|
-    |Actual 0 (Approved)| | |
-    |Actual 1 (Rejected)| | |
+    |Actual 0 (Approved)|164670|42553|
+    |Actual 1 (Rejected)|23338|146695|
 * Imbalanced Classification Report
     | |precision|recall|specificty|f1|n|
-    |------------|---------|------|----------|--|-|
-    |0 (Approved)| | | | |207223|
-    |1 (Rejected)| | | | |170033|
-    |Avg/Total   | | | | |377256|
+    |------------|----|----|----|----|------|
+    |0 (Approved)|0.88|0.79|0.86|0.83|207223|
+    |1 (Rejected)|0.78|0.86|0.79|0.82|170033|
+    |Avg/Total   |0.83|0.83|0.83|0.83|377256|
+    
 ## Summary 
