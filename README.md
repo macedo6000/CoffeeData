@@ -17,6 +17,9 @@ The original CSV file contains 1,709,502 rows of string, integer, and float nume
 * Does the applicants county/address have an affect on approval? 
 * Does the applicants income have an affect on approval? 
 
+#### Presentation
+https://docs.google.com/presentation/d/1f93N2tBkFzOsnvKHm8yDEEB_12Z-LlqSyPY9UlhBH0Q/edit#slide=id.g2047f8f7f31_0_52
+
 ---
 
 ### References
