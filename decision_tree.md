@@ -109,17 +109,31 @@ The results of the BRFC (No hoepa_status) are as follows:
 ### Easy Ensemble AdaBoost Classifier 
 
 The results of the Easy Ensemble AdaBoost Classifier are as follows:
-* Accuracy Score = 0.8287392760686865
+* Accuracy Score = 0.828865300368754
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |-------------------|--------------------|-------------------|
-    |Actual 0 (Approved)|164647|42576|
-    |Actual 1 (Rejected)|23305|146728|
+    |Actual 0 (Approved)|165205|42018|
+    |Actual 1 (Rejected)|23720|146313|
 * Imbalanced Classification Report
     | |precision|recall|specificty|f1|n|
     |------------|---------|------|----------|--|-|
-    |0 (Approved)|0.88|0.79|0.86|0.83|207223|
-    |1 (Rejected)|0.78|0.86|0.79|0.82|170033|
+    |0 (Approved)|0.87|0.80|0.86|0.83|207223|
+    |1 (Rejected)|0.78|0.86|0.80|0.82|170033|
     |Avg/Total|0.83|0.83|0.83|0.83|377256|
 
+
+After removing the hoepa_status column from the *input features* dataset and re-training the Easy Ensemble AdaBoost Classifier, the results are as follows:
+* Accuracy Score = 
+* Confusion Matrix 
+    |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
+    |-------------------|--------------------|-------------------|
+    |Actual 0 (Approved)| | |
+    |Actual 1 (Rejected)| | |
+* Imbalanced Classification Report
+    | |precision|recall|specificty|f1|n|
+    |------------|---------|------|----------|--|-|
+    |0 (Approved)| | | | |207223|
+    |1 (Rejected)| | | | |170033|
+    |Avg/Total   | | | | |377256|
 ## Summary 
