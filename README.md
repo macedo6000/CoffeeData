@@ -1,4 +1,4 @@
-# HMDA Data - Machine Learning Model Analysis with Decision Trees
+# HMDA Data - Machine Learning Model Analysis with Decision Trees - Segment 2
 
 Machine learning is the use of statistical algorithms to perform tasks such as learning from data patterns and making predictions. From the three learning categories, we utilized supervised learning to understand the data patterns of ours dataset. These patterns are are formed from the applicants demographic, personal, and financial infromation. After, our decision trees determined if the loan was approved or reject. Both tools are beneficial to home mortgage approvals because it helps denote what factors are more important than others when seeking a loan. This can help future applicants to better prepare for future loans. 
 
