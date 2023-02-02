@@ -25,10 +25,6 @@ Cleaned Data: https://hmda-data-bucket.s3.amazonaws.com/data/cleaned_data.csv
 
 Separated Numeric Data: https://hmda-data-bucket.s3.amazonaws.com/data/numeric_database.csv
 
-Separated Loan-Info Data: https://hmda-data-bucket.s3.amazonaws.com/data/loan_info_database.csv
-
-Separated Demographic Data: https://hmda-data-bucket.s3.amazonaws.com/data/demographics_database.csv
-
 Label Names & Number Data: https://hmda-data-bucket.s3.amazonaws.com/data/name_number_table.csv
 
 ## Dataset & Data Structures
