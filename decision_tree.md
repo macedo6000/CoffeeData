@@ -49,7 +49,7 @@ The results of the Balanced Random Forest Classifier are as follows:
 * Accuracy Score = 0.8262504983255754
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
-    |------------------ |______________________|____________________|
+    |------------------ |----------------------|--------------------|
     |Actual 0 (Approved)|167942|39281|
     |Actual 1 (Rejected)|26855|143178|
 * Imbalanced Classification Report
@@ -92,7 +92,7 @@ The results of the Balanced Random Forest Classifier are as follows:
 * Accuracy Score = 0.8262504983255754
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
-    |------------------ |______________________|____________________|
+    |------------------ |----------------------|----------------------|
     |Actual 0 (Approved)|167942|39281|
     |Actual 1 (Rejected)|26855|143178|
 * Imbalanced Classification Report
@@ -107,7 +107,7 @@ The results of the Easy Ensemble AdaBoost Classifier are as follows:
 * Accuracy Score = 0.8287392760686865
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
-    |------------------ |______________________|____________________|
+    |------------------ |--------------------|-------------------|
     |Actual 0 (Approved)|164647|42576|
     |Actual 1 (Rejected)|23305|146728|
 * Imbalanced Classification Report
