@@ -49,7 +49,7 @@ After standardizing the *input features* using a Standard Scaler from the SciKit
 The resulting datasets were used to train and test two Decision Tree Classification Machine Learning Models. Classification Models are assessed on the accuracy of their prediction that an application will be approved or jected. 
 ### Balanced Random Forest Classifier 
 
-The results of the Balanced Random Forest Classifier are as follows:
+The results of the Balanced Random Forest Classifier (BRFC) are as follows:
 * Accuracy Score = 0.8262504983255754
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
@@ -65,7 +65,7 @@ The results of the Balanced Random Forest Classifier are as follows:
 
 #### Feature Importances 
 
-The Balanced Random Forest Classifier model also presents the importance of each column in the *input features* dataset. See below:
+The BRFC model also presents the importance of each column in the *input features* dataset. See below:
 |Importance|               *Input Feature*|
 |----------|------------------------------|
 |0.402604|                  purchaser_type|
@@ -90,21 +90,15 @@ The Balanced Random Forest Classifier model also presents the importance of each
 |0.002376|                   property_type|
 |0.000204|                    hoepa_status|
 
-After reviewing feature importances, the six least important *input features* were removed and the Balanced Random Forest model was re-trained. The five features included: 
+After reviewing feature importances, the least important feature, *hoepa_status* was removed before retraining the BRFC model 
 
-    * co_applicant_sex
-    * co_applicant_ethnicity
-    * owner_occupancy
-    * property_type
-    * hoepa_status
-
-The results of the Balanced Random Forest Classifier are as follows:
-* Accuracy Score = 0.8247688462510924
+The results of the BRFC (No hoepa_status) are as follows:
+* Accuracy Score = 0.8262267497523921
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |------------------ |----------------------|----------------------|
-    |Actual 0 (Approved)|167228|39995|
-    |Actual 1 (Rejected)|26773|143260|
+    |Actual 0 (Approved)|167987|39236|
+    |Actual 1 (Rejected)|26900|143133|
 * Imbalanced Classification Report
     |            |precision|recall|specificty|f1|n|
     |------------|---------|------|----------|--|-|
