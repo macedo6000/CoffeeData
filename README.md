@@ -43,17 +43,18 @@ The folders of the database branch are structured as follows:
 │   ├── main
 │   ├── database
 │   |   ├── README.md
-│   │   ├── data
+│   │   ├── data/
 │   │   │   ├── README.md
 │   │   │   ├── demographics_database.zip
 │   │   │   ├── loan_info_database.zip
-│   |   ├── data_dictionaries
+│   |   ├── data_dictionaries/
 │   │   │   ├── README.md
 │   │   │   ├── raw_data_column_typeformat.pdf
 │   │   │   ├── raw_data_dictionary
 │   │   │   ├── raw_data_types
-│   |   ├── eda
-│   │   │   ├── column_value_counts
+│   |   ├── eda/
+│   |   |   ├── exploratory_data_analysis.ipynb
+│   │   │   ├── column_value_counts/
 |   │   │   │   ├── README.md
 |   │   │   │   ├── action_taken
 |   │   │   │   |   ├── Value_Counts_action_taken.csv
@@ -67,8 +68,10 @@ The folders of the database branch are structured as follows:
 │   │   │   ├── columnar_data.csv
 │   │   │   ├── columnar_VC_high_low.zip
 │   │   │   ├── columnar_value_counts.zip
-│   |   ├── data_cleaning.ipynb
-│   |   ├── exploratory_data_analysis.ipynb
+│   |   ├── etl/
+│   │   │   ├── data_cleaning.ipynb
+│   │   │   ├── name_num_split.ipynb
+│   │   │   ├── splitting_data.ipynb
 │   ├── Raj
 │   ├── Angie
 │   ├── Nicholas
