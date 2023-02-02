@@ -1,5 +1,5 @@
 CREATE TABLE raw_data (
-as_of_year INTEGER, 
+as_of_year INTEGER,
 respondent_id VARCHAR,
 agency_name VARCHAR,
 agency_abbr VARCHAR,
@@ -79,6 +79,7 @@ number_of_1_to_4_family_units NUMERIC,
 application_date_indicator NUMERIC
 );
 
+
 CREATE TABLE numeric_data (
 sequence_number BIGINT,
 population NUMERIC,
@@ -102,35 +103,6 @@ property_type INTEGER,
 owner_occupancy INTEGER,
 hoepa_status INTEGER,
 county_code NUMERIC
-);
-
-CREATE TABLE loan_info_data (
-sequence_number BIGINT,
-loan_amount_000s NUMERIC,
-applicant_income_000s NUMERIC,
-loan_type INTEGER,
-loan_purpose INTEGER,
-purchaser_type INTEGER,
-property_type INTEGER,
-owner_occupancy INTEGER,
-hoepa_status INTEGER,
-county_code NUMERIC
-);
-
-CREATE TABLE demographic_data (
-sequence_number BIGINT,
-population NUMERIC,
-minority_population NUMERIC,
-hud_median_family_income NUMERIC,
-tract_to_msamd_income NUMERIC,
-number_of_owner_occupied_units NUMERIC,
-number_of_1_to_4_family_units NUMERIC,
-applicant_sex INTEGER,
-co_applicant_sex INTEGER,
-applicant_ethnicity INTEGER,
-co_applicant_ethnicity INTEGER,
-applicant_race_1 INTEGER,
-co_applicant_race_1 INTEGER
 );
 
 CREATE TABLE name_number_count (
