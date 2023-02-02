@@ -53,8 +53,8 @@ The results of the Balanced Random Forest Classifier are as follows:
     |Actual 0 (Approved)|167942|39281|
     |Actual 1 (Rejected)|26855|143178|
 * Imbalanced Classification Report
-    | |precision|recall|specificty|f1|n|
-    | |---------|------|----------|--|-|
+    |            |precision|recall|specificty|f1|n|
+    |------------|---------|------|----------|--|-|
     |0 (Approved)|0.86|0.81|0.84|0.84|207223|
     |1 (Rejected)|0.78|0.84|0.81|0.81|170033|
     |Avg/Total|0.83|0.82|0.83|0.83|377256|
@@ -96,24 +96,24 @@ The results of the Balanced Random Forest Classifier are as follows:
     |Actual 0 (Approved)|167563|39660|
     |Actual 1 (Rejected)|27331|142702|
 * Imbalanced Classification Report
-    | |precision|recall|specificty|f1|n|
-    | |---------|------|----------|--|-|
+    |            |precision|recall|specificty|f1|n|
+    |------------|---------|------|----------|--|-|
     |0 (Approved)|0.86|0.81|0.84|0.84|207223|
     |1 (Rejected)|0.78|0.84|0.81|0.81|170033|
     |Avg/Total|0.83|0.82|0.83|0.83|377256|
-    
+
 ### Easy Ensemble AdaBoost Classifier 
 
 The results of the Easy Ensemble AdaBoost Classifier are as follows:
 * Accuracy Score = 0.8287392760686865
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
-    |------------------ |--------------------|-------------------|
+    |-------------------|--------------------|-------------------|
     |Actual 0 (Approved)|164647|42576|
     |Actual 1 (Rejected)|23305|146728|
 * Imbalanced Classification Report
     | |precision|recall|specificty|f1|n|
-    | |---------|------|----------|--|-|
+    |------------|---------|------|----------|--|-|
     |0 (Approved)|0.88|0.79|0.86|0.83|207223|
     |1 (Rejected)|0.78|0.86|0.79|0.82|170033|
     |Avg/Total|0.83|0.83|0.83|0.83|377256|
