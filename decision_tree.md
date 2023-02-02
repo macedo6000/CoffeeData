@@ -89,18 +89,19 @@ The Balanced Random Forest Classifier model also presents the importance of each
 After reviewing feature importances, the six least important *input features* were removed and the Balanced Random Forest model was re-trained. The six features included: 
     *
 The results of the Balanced Random Forest Classifier are as follows:
-* Accuracy Score = 0.8262504983255754
+* Accuracy Score = 0.8239362962580822
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |------------------ |----------------------|----------------------|
-    |Actual 0 (Approved)|167942|39281|
-    |Actual 1 (Rejected)|26855|143178|
+    |Actual 0 (Approved)|167563|39660|
+    |Actual 1 (Rejected)|27331|142702|
 * Imbalanced Classification Report
     | |precision|recall|specificty|f1|n|
     | |---------|------|----------|--|-|
     |0 (Approved)|0.86|0.81|0.84|0.84|207223|
     |1 (Rejected)|0.78|0.84|0.81|0.81|170033|
     |Avg/Total|0.83|0.82|0.83|0.83|377256|
+    
 ### Easy Ensemble AdaBoost Classifier 
 
 The results of the Easy Ensemble AdaBoost Classifier are as follows:
