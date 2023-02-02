@@ -4,4 +4,6 @@
 
 ### exploratory_data_analysis.ipynb
 
-This Jupyter Notebook imports the cleaned data for exploratory data analysis
+This Jupyter Notebook imports the cleaned data for exploratory data analysis.
+
+ADD STUFF!!!
