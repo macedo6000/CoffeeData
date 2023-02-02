@@ -50,7 +50,7 @@ The resulting datasets were used to train and test two Decision Tree Classificat
 ### Balanced Random Forest Classifier 
 
 The results of the Balanced Random Forest Classifier (BRFC) are as follows:
-* Accuracy Score = 0.8262504983255754
+* Accuracy Score = 0.8258400146078364
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |------------------ |----------------------|--------------------|
@@ -93,18 +93,18 @@ The BRFC model also presents the importance of each column in the *input feature
 After reviewing feature importances, the least important feature, *hoepa_status* was removed before retraining the BRFC model 
 
 The results of the BRFC (No hoepa_status) are as follows:
-* Accuracy Score = 0.8262267497523921
+* Accuracy Score = 0.8260998519680105
 * Confusion Matrix 
     |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
     |------------------ |----------------------|----------------------|
-    |Actual 0 (Approved)|167987|39236|
-    |Actual 1 (Rejected)|26900|143133|
+    |Actual 0 (Approved)|167999|39224|
+    |Actual 1 (Rejected)|26953|143080|
 * Imbalanced Classification Report
     |            |precision|recall|specificty|f1|n|
     |------------|---------|------|----------|--|-|
     |0 (Approved)|0.86|0.81|0.84|0.84|207223|
     |1 (Rejected)|0.78|0.84|0.81|0.81|170033|
-    |Avg/Total|0.83|0.82|0.83|0.83|377256|
+    |Avg/Total|0.83|0.82|0.83|0.82|377256|
 
 ### Easy Ensemble AdaBoost Classifier 
 
