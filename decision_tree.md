@@ -46,13 +46,13 @@ After standardizing the *input features* using a Standard Scaler from the SciKit
 
 ## Results
 
-The resulting datasets were used to train and test two Decision Tree Classification Machine Learning Models. Classification Models are assessed on the accuracy of their prediction that an application will be approved or jected. 
+The resulting datasets were used to train and test two Decision Tree Classification Machine Learning Models. Classification Models are assessed on the accuracy of their prediction that an application will be approved or rejected. 
 ### Balanced Random Forest Classifier 
 
 The results of the Balanced Random Forest Classifier (BRFC) are as follows:
 * Accuracy Score = 0.8258400146078364
 * Confusion Matrix 
-    |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
+    |                   |Predicted 0 (Approved)|Predicted 1 (Rejected)|
     |------------------ |----------------------|--------------------|
     |Actual 0 (Approved)|167845|39378|
     |Actual 1 (Rejected)|26915|143118|
@@ -95,7 +95,7 @@ After reviewing feature importances, the least important feature, *hoepa_status*
 The results of the BRFC (No hoepa_status) are as follows:
 * Accuracy Score = 0.8260998519680105
 * Confusion Matrix 
-    |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
+    |                   |Predicted 0 (Approved)|Predicted 1 (Rejected)|
     |------------------ |----------------------|----------------------|
     |Actual 0 (Approved)|167999|39224|
     |Actual 1 (Rejected)|26953|143080|
@@ -111,7 +111,7 @@ The results of the BRFC (No hoepa_status) are as follows:
 The results of the Easy Ensemble AdaBoost Classifier are as follows:
 * Accuracy Score = 0.828865300368754
 * Confusion Matrix 
-    |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
+    |                   |Predicted 0 (Approved)|Predicted 1 (Rejected)|
     |-------------------|--------------------|-------------------|
     |Actual 0 (Approved)|165205|42018|
     |Actual 1 (Rejected)|23720|146313|
@@ -126,7 +126,7 @@ The results of the Easy Ensemble AdaBoost Classifier are as follows:
 After removing the hoepa_status column from the *input features* dataset and re-training the Easy Ensemble AdaBoost Classifier, the results are as follows:
 * Accuracy Score = 0.8286977318525881
 * Confusion Matrix 
-    |                   |Predicted 0 (Approved)|Predicted 1 (Reject)|
+    |                   |Predicted 0 (Approved)|Predicted 1 (Rejected)|
     |-------------------|--------------------|-------------------|
     |Actual 0 (Approved)|164670|42553|
     |Actual 1 (Rejected)|23338|146695|
