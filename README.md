@@ -1,9 +1,5 @@
 # Evaluating the Criteria for Eligibility for Home Mortgages
 
-### Status - *Segment 2*
-
----
-
 #### The selected topic and the reasoning for that selection
 In this project, team 5 will be analyzing the criterias for eligibility for home mortgages. The reason why we chose to analyze loan procceses is to identify what are potential factors on these applications. By the year, the reality of wanting to have our dream homes for our families becomes a much more serious topic. Understanding loans and acknowledging what components increases our chances of securing credit at the most favorable terms can save you thousands. As a team, we will examine multiple indicators such as demographic, personal, and financial information for each mortgage application. For the demographic, we want to identify if there is bias on applicants that come from a more diverse background involving gender, race, and ethnicity. Personal features consists of their location, HOEPA status, or the number of owners in an occupied unit. Lastly, the applicants financial information, which should be the most important, uses data such as their income and loan information. By studying this dataset, the team hopes to further understand loan applications and help others identify what factors can potentially predict the likelyhood of getting an offer. As well, to eliminate lending discrimination in this case if the issues rises. 
 
