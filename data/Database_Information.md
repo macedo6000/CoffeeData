@@ -1,4 +1,4 @@
-- AWS RDS Endpoint (Host Name for PgAdmin): hmda-loan-database.cfo8yzx2osax.us-east-1.rds.amazonaws.com
+- AWS RDS Endpoint (Host Name for PgAdmin): hmda-final-db.cfo8yzx2osax.us-east-1.rds.amazonaws.com
 - Amazon S3 - Data Bucket URL: https://hmda-data-bucket.s3.amazonaws.com/data/
 
 
