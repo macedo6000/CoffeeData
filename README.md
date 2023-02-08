@@ -218,6 +218,7 @@ The CSV file "/EDA/name_number_table.csv" aggregates all categorical entries and
 ## Extract, Transform, Load 
 
 After downloading the compressed datafile from the CFPB, the raw dataset was extracted and uploaded to an S3 bucket for use in the project. Using Google Colab, a Jupyter Notebook was created with a PySpark session connecting to the S3 bucket along with a JDBC driver to connect to the RDS.
+
 ### Data Cleaning
 
 Once loaded into a PySpark dataframe, the raw dataset was checked for null and duplicate values. While the majority of columns contained complete information, 29 columns were identified as having high-null value counts (1 million +) and were dropped from the dataset. These columns include: 
@@ -299,27 +300,20 @@ The Psycopg2 database adapter was used to access the Postgres RDS housing the te
 
 ``` Python
 def connect():
-    
     # Set up a connection to the postgres server.
-    conn_string = "host="+ PGEND_POINT +" port="+ "5432" +" dbname="+ PGDATABASE_NAME +" user=" + PGUSER_NAME \
-                  +" password="+ PGPASSWORD
-    
+    conn_string = "host="+ PGEND_POINT +" port="+ "5432" +" dbname="+ PGDATABASE_NAME +" user=" + PGUSER_NAME +" password="+ PGPASSWORD
     conn = psycopg2.connect(conn_string)
-
-    print("Connected!")
-
+    
     # Create a cursor object
     cursor = conn.cursor()
-    
+
+    print("Connected!")
     return conn, cursor
 
 
 conn, cursor = connect()
 
 ```
-
-
-### Metric Designation
 
 ## Machine Learning
 
@@ -357,11 +351,102 @@ INNER JOIN text_data td
 ORDER BY nd.loan_amount_000s
 ```
 
-The result of this query was named "*ml_df*," and used as the base dataset for the Machine Learning analysis, detailed below. 
+The result of this query was named "*ml_df*," and used as the base dataset for the Machine Learning analysis.
+
+### Metric Designation
+
+Before venturing into the preprocessing and model design, a metric was extracted from the dataset. In 2017, 27,260 applicants sought preapproval; 20,790 of which were approved for their mortgages. We can extrapolate that the preapproval process has an accuracy score of 76.27% in predicting whether a loan application will be apporoved or not. This accuracy score will be the metric upon which our machine learning models will be measured.
 
 ### Preprocessing
 
+The dataset contains categorical text and continuous numerical data which must be preprocessed for the machine learning algorithms. Categorical columns must be encoded using numerical labels using either the LabelEncoder() or OneHotEncoder() modules from the skLearn.preprocessing package. 
+
+The categorical columns must be separated from original dataset by filtering for columns with non-numeric datatypes. See the get_categorical_columns_list() function, which take the dataframe and extracts a list of columns with 'object' datatypes. 
+
+``` Python
+
+def get_categorical_columns_list(data):
+    data = data.copy()
+
+    encoded_columns_list = data.dtypes[data.dtypes == 'object'].index.tolist()
+
+    return encoded_columns_list
+
+
+categorical_columns = get_categorical_columns_list(ml_df)
+```
+
 #### Binning & Encoding
+
+Columns with large numbers of unique categories may benefit from binning, a process which combines categories with the lowest frequencies under an "other" label. See the make_bins() function, which takes a dataframe, the desired column, and a numeric cutoff, and returns a new dataframe containing the binned version of the designated column. 
+
+``` Python
+
+def make_bins(data, column, cutoff):
+    data.copy()
+    #store value counts as label_list
+    label_list = data[column].value_counts()
+    #make a list of labels with value counts less than the cutoff
+    replace_list = list(label_list[label_list < cutoff].index)
+    #iterate through replace_list and replace that item with "other" in the dataframe
+    for item in replace_list:
+        data[column] = data[column].replace(item,'other')
+    
+    return data
+
+
+ml_df_binned = make_bins(ml_df, 'county_name', 20000)
+ml_df_binned = make_bins(ml_df, 'msamd_name', 20000)
+
+```
+
+The LabelEncoder() module converts categorical values into linearly asscending numerical labels. This keeps the number of input features (columns) constant, but has the potential to impart bias on categories labeled with larger numerical values that previous categories in the series. See the encode_labels() function below, which takes the dataframe and categorical columns, encodes them using the LabelEncoder() method, and returns the encoded dataframe. 
+
+``` Python
+
+def encode_labels(data, categorical_columns):
+    data = data.copy()
+
+    categorical_data = data[categorical_columns]
+
+    le = LabelEncoder()
+
+    for column in categorical_data.columns:
+        data[column] = le.fit_transform(data[column])
+
+    return data
+
+
+cat_columns = ['agency_abbr','loan_type_name','loan_purpose_name','property_type_name','owner_occupancy_name','msamd_name','county_name']
+ml_df_label_encoded = encode_labels(ml_df_binned, cat_columns)
+
+```
+
+The OneHotEncoder() creates buckets out of the categorical values, creating a new column for every category. While this has the potential to increase the number of input features (columns) significantly, it provides a more accurate reflection of the categorical data contained within. There is no risk of biasing categorical values with higher numerical values since all designated categories will be represent by a value of 1 within their respective columns. The encode_hot_labels() function takes the dataframe and list of categorical columns, uses the OneHotEncoder() method to make buckets from the columns and merges the resulting dataset with the continuous numerical values from the original, returning a new, encoded dataframe. 
+
+``` Python
+
+def encode_hot_labels(data, categorical_columns):
+    data = data.copy()
+    # make df of columns to be encoded
+    categorical_data = data[categorical_columns]
+    #initialize the encoder
+    enc = OneHotEncoder(sparse=False)
+    #fit and transform the encoded columns
+    encoded = enc.fit_transform(categorical_data)
+    #create a dataframe of with the encoded data
+    encoded_df = pd.DataFrame(encoded)
+    #name the columns using the get_feature_names method
+    encoded_df.columns = enc.get_feature_names_out(categorical_columns)
+    #merge the original and encoded dataframes
+    data = data.merge(encoded_df, left_index=True, right_index=True).drop(columns=categorical_columns, axis=1)
+
+    print('encode_data: Done!')
+    return data
+
+cat_columns = ['agency_abbr','loan_type_name','loan_purpose_name','property_type_name','owner_occupancy_name','msamd_name','county_name']
+ml_df_hot_encoded = encode_hot_labels(ml_df_binned, cat_columns)
+```
 
 #### Target Designation, Splitting the Dataset
 
@@ -416,6 +501,7 @@ def scale_data(train, test):
 
     print('scale_data: Done!')
     return train_scaled, test_scaled
+
 
 X_train_scaled, X_test_scaled = scale_data(X_train, X_test)
 
