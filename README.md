@@ -21,6 +21,7 @@ As a team, we will examine multiple indicators such as demographic, personal, an
 
 This repository is structured as follows:
 
+```
 ├── main
 │   ├── README.md
 │   ├── ETL.ipynb
@@ -45,7 +46,7 @@ This repository is structured as follows:
 │   ├── ML/
 │   |   ├── brfc_0.txt
 │   |   ├── brfc_1.txt
-
+```
 
 
 ## Exploratory Data Analysis
