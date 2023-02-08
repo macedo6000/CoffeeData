@@ -38,8 +38,8 @@ This repository is structured as follows:
 │   │   ├── raw_data_types
 │   ├── EDA/
 │   |   ├── name_number_table.csv
-│   |   ├── exploratory_data_analysis.ipynb
 │   │   ├── columnar_data.csv
+│   |   ├── exploratory_data_analysis.ipynb
 │   │   ├── data_cleaning.ipynb
 │   │   ├── name_num_split.ipynb
 │   │   ├── splitting_data.ipynb
@@ -48,6 +48,23 @@ This repository is structured as follows:
 │   |   ├── brfc_1.txt
 ```
 
+### Technologies Used
+
+The technologies used in this project include:
+
+* Google Colab/Jupyter Notebook
+* Amazon Web Services: Simple Storage Solution (AWS S3)
+* Amazon Web Services: Relational Database Service (AWS RDS)
+* PostgreSQL/pgAdmin 
+* Python
+* PySpark 
+* Pandas
+* PsycopG2
+* skLearn
+* imbLearn
+* Matplotlib
+* Tableau
+* Google Slides 
 
 ## Exploratory Data Analysis
 
@@ -120,7 +137,7 @@ preapproval_columns = ['preapproval_name',
 approval_columns = ['action_taken_name', 
     'action_taken']
 
-# denial
+# denial/result columns
 denial_reason_columns = ['denial_reason_1', 
     'denial_reason_2', 
     'denial_reason_3', 
@@ -134,12 +151,6 @@ loan_result_columns = ['purchaser_type_name',
     'hoepa_status', 
     'lien_status_name',
     'lien_status']
-
-# constant, float
-tracking_columns = ['edit_status_name', 
-    'edit_status', 
-    'sequence_number',
-    'respondent_id']
 
 # date/time/location columns
 date_time_loc_columns = ['as_of_year',  
@@ -156,19 +167,261 @@ date_time_loc_columns = ['as_of_year',
     'census_tract_number', 
     'application_date_indicator']
 
+# misc columns
+tracking_columns = ['edit_status_name', 
+    'edit_status', 
+    'sequence_number',
+    'respondent_id']
 
 ```
 
-Columns containing categorical information like 'loan_purpose' have a corresponding "name" column (i.e., 'loan_purpose_name'), which correlates a numerical label to each cateogorical variable. The following columns follow this scheme:
+Columns containing categorical information like 'loan_purpose' have a corresponding "name" column (i.e., 'loan_type_name'), which correlates a numerical label to each cateogorical variable. (i.e., loan_type = 1, loan_type_name = 'Conventional') The following columns follow this scheme are as follows:
+
+``` python
+categorical_columns = {'loan_type_name': 'loan_type',
+ 'property_type_name': 'property_type',
+ 'loan_purpose_name': 'loan_purpose',
+ 'owner_occupancy_name': 'owner_occupancy',
+ 'purchaser_type_name': 'purchaser_type',
+ 'hoepa_status_name': 'hoepa_status',
+ 'applicant_ethnicity_name': 'applicant_ethnicity',
+ 'co_applicant_ethnicity_name': 'co_applicant_ethnicity',
+ 'applicant_sex_name': 'applicant_sex',
+ 'co_applicant_sex_name': 'co_applicant_sex',
+ 'applicant_race_name_1': 'applicant_race_1',
+ 'co_applicant_race_name_1': 'co_applicant_race_1'
+ 'applicant_race_name_2': 'applicant_race_2',
+ 'co_applicant_race_name_2': 'co_applicant_race_2'
+ 'applicant_race_name_3': 'applicant_race_3',
+ 'co_applicant_race_name_3': 'co_applicant_race_3'
+ 'applicant_race_name_4': 'applicant_race_4',
+ 'co_applicant_race_name_4': 'co_applicant_race_4'
+ 'applicant_race_name_5': 'applicant_race_5',
+ 'co_applicant_race_name_5': 'co_applicant_race_5',
+ 'purchaser_type_name': 'purchaser_type',
+ 'hoepa_status_name': 'hoepa_status', 
+ 'lien_status_name': 'lien_status',
+ 'denial_reason_name_1':'denial_reason_1',
+ 'denial_reason_name_2':'denial_reason_2',
+ 'denial_reason_name_3':'denial_reason_3',
+ 'county_name':'county_code',
+ 'state_name':'state_code',
+ 'agency_name':'agency_code',
+ 'edit_status_name':'edit_status',
+ 'preapproval_name':'preapproval',
+ 'action_taken_name':'action_taken'}
+```
+
+The CSV file "/EDA/name_number_table.csv" aggregates all categorical entries and their corresponding numeric label. 
 
 
+## Extract, Transform, Load 
 
-## Extract Transform Load 
-
-
+After downloading the compressed datafile from the CFPB, the raw dataset was extracted and uploaded to an S3 bucket for use in the project. Using Google Colab, a Jupyter Notebook was created with a PySpark session connecting to the S3 bucket along with a JDBC driver to connect to the RDS.
 ### Data Cleaning
 
+Once loaded into a PySpark dataframe, the raw dataset was checked for null and duplicate values. While the majority of columns contained complete information, 29 columns were identified as having high-null value counts (1 million +) and were dropped from the dataset. These columns include: 
+
+```Python
+
+drop_df = df.drop(
+    'as_of_year',
+    'respondent_id',
+    'edit_status',
+    'edit_status_name',
+    'sequence_number',
+    'application_date_indicator',
+    'applicant_race_2',
+    'applicant_race_3',
+    'applicant_race_4',
+    'applicant_race_5',
+    'applicant_race_name_2',
+    'applicant_race_name_3',
+    'applicant_race_name_4',
+    'applicant_race_name_5',
+    'co_applicant_race_2',
+    'co_applicant_race_3',
+    'co_applicant_race_4',
+    'co_applicant_race_5',
+    'co_applicant_race_name_2',
+    'co_applicant_race_name_3',
+    'co_applicant_race_name_4',
+    'co_applicant_race_name_5',
+    'denial_reason_1',
+    'denial_reason_2',
+    'denial_reason_3',
+    'denial_reason_name_1',
+    'denial_reason_name_2',
+    'denial_reason_name_3',
+    'rate_spread')
+
+```
+
+After dropping these columns, the dataset was checked again for null and duplicate values, which were removed. 
+
+The cleaned dataset was now composed of 1,466,293 rows of data spread over 49 columns.  
+
+### Data Pipeline
+
+The cleaned dataset was split in two: one dataframe containing both categorical and continuous numerical data, and a second containing the corresponding, text-based categorical values for each mortgage application. 
+
+After connecting to the AWS RDS using pgAdmin, a new database was created using the schema, below:
+
+``` SQL
+
+DROP TABLE IF EXISTS text_data;
+DROP TABLE IF EXISTS numeric_data;
+
+
+CREATE TABLE text_data(
+agency_name VARCHAR,
+agency_abbr VARCHAR,
+[...]
+application_id BIGINT,
+PRIMARY KEY (application_id)
+);
+ 
+CREATE TABLE numeric_data(
+agency_code INTEGER,
+loan_type INTEGER,
+[...]
+application_id BIGINT,
+FOREIGN KEY (application_id) REFERENCES text_data (application_id),
+PRIMARY KEY (application_id)
+);
+```
+
+The cleaned and split datasets were then uploaded to their respective tables using PySpark's JDBC driver.
+
+## Data Analysis 
+
+The Psycopg2 database adapter was used to access the Postgres RDS housing the text and numeric data uploaded in the previous step. See the code[^*] from 'ml_analysis.ipynb.' 
+
+``` Python
+def connect():
+    
+    # Set up a connection to the postgres server.
+    conn_string = "host="+ PGEND_POINT +" port="+ "5432" +" dbname="+ PGDATABASE_NAME +" user=" + PGUSER_NAME \
+                  +" password="+ PGPASSWORD
+    
+    conn = psycopg2.connect(conn_string)
+
+    print("Connected!")
+
+    # Create a cursor object
+    cursor = conn.cursor()
+    
+    return conn, cursor
+
+
+conn, cursor = connect()
+
+```
+
+
+### Metric Designation
+
 ## Machine Learning
+
+Once connected to the RDS, an SQL query was passed through the database adapter to pull the appopriate columns for Machine Learning analysis from the database. See the query, below:
+
+``` SQL
+SELECT 
+    nd.loan_amount_000s,
+    nd.applicant_income_000s,
+    nd.population,
+    nd.minority_population,
+    nd.census_tract_number,
+    nd.hud_median_family_income,
+    nd.tract_to_msamd_income,
+    nd.number_of_owner_occupied_units,
+    nd.number_of_1_to_4_family_units,
+    td.agency_abbr, 
+    td.loan_type_name, 
+    td.property_type_name, 
+    td.loan_purpose_name,
+    td.owner_occupancy_name, 
+    td.msamd_name,
+    td.county_name,
+    td.purchaser_type_name,
+    td.hoepa_status_name,
+    td.lien_status_name,
+    td.preapproval_name,
+    nd.preapproval,
+    td.action_taken_name,
+    nd.action_taken
+FROM
+    numeric_data nd 
+INNER JOIN text_data td 
+    ON nd.application_id = td.application_id 
+ORDER BY nd.loan_amount_000s
+```
+
+The result of this query was named "*ml_df*," and used as the base dataset for the Machine Learning analysis, detailed below. 
+
+### Preprocessing
+
+#### Binning & Encoding
+
+#### Target Designation, Splitting the Dataset
+
+The *action_taken* column represents the outcome of the loan. In the HMDA dataset from 2017, 809,668 applicants were approved and had their loans originated, receiving an *action_taken* status of 1; 662,643 applicants received an *action_taken* status other than 1, indicating these individuals were not approved for one reason or another. The original eight categories were condensed to two: {0: loan orignated, 1: loan not originated}. This was achieved using the fix_target_column() function, defined below:
+
+``` Python 
+def fix_target_data(member):
+    if member == 1:
+        return 1 
+    else:
+        return 0
+
+
+ml_df['action_taken'] = ml_df['action_taken'].apply(fix_target_data)
+
+```
+
+After designating the *target variable*, the model needs to be split into *input features* and a *target column*. The split_target() function takes the dataset and separates it in two: the *target column*, y, and the *input features*, X; see the code below. 
+
+
+``` Python
+
+def split_target(data, target):
+    data = data.copy()
+    
+    #separate X and y datasets
+    y = data[target].ravel()
+    X = data.drop(columns=target)
+
+    print('split_target: Done!')
+    return X, y
+
+
+X, y = split_target(ml_df_encoded, target='action_taken')
+```
+
+#### Standardization
+
+Given the admixture of small and large numeric values, the machine learning dataset needed to be standardized to prevent distortion of the model toward features with large absolute values. This was achieved by using the skLearn StandardScaler() module, as part of their data preprocessing package. See the code below:
+
+``` Python
+
+def scale_data(train, test):
+    scaler = StandardScaler()
+
+    #fit the training data 
+    t_scaler = scaler.fit(train)
+    
+    #transform training and test datasets
+    train_scaled = t_scaler.transform(train)
+    test_scaled = t_scaler.transform(test)
+
+    print('scale_data: Done!')
+    return train_scaled, test_scaled
+
+X_train_scaled, X_test_scaled = scale_data(X_train, X_test)
+
+```
+
+### Model Selection & Design
 
 ## Results
 
