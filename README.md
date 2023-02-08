@@ -48,23 +48,6 @@ This repository is structured as follows:
 
 
 
-
-│   |   |   ├── exploratory_data_analysis.ipynb
-│   │   │   ├── column_value_counts/
-|   │   │   │   ├── README.md
-|   │   │   │   ├── action_taken
-|   │   │   │   |   ├── Value_Counts_action_taken.csv
-|   │   │   │   ├── action_taken_name
-|   │   │   │   |   ├── Value_Counts_action_taken_name.csv
-|   │   │   │ /// x 76
-|   │   │   │   ├── state_code
-|   │   │   │   |   ├── Value_Counts_state_code.csv
-|   │   │   │   ├── state_name
-|   │   │   │   |   ├── Value_Counts_state_name.csv
-│   
-│   │   │   ├── columnar_VC_high_low.zip
-│   │   │   ├── columnar_value_counts.zip
-
 ## Exploratory Data Analysis
 
  The most recent release of HMDA Data for California saw a dataset containing over 1.7 million records of home mortgage applicants in 2017. The data portrays an applicant's financial, personal, and demographic information through various categorical and numeric variables.
