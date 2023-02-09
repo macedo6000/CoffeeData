@@ -771,14 +771,32 @@ Imbalanced Classification Report: Easy Ensemble Classifier Test 2
 |          1 |      0.54 |     0.57  |    0.61   |   0.56 |     0.59|      0.35|    164578|
 |avg / total |      0.60 |     0.59  |    0.59   |   0.59 |     0.59|      0.35|    366574|
 
-## Summary
+## Visualizations
 
+![Bar_chart](Loan_img.PNG)
+
+From our bar chat, a vast amount of the upper features are demographic-related features. While this may seem discouraging, it's important to note that the top 2 most significant features are directly linked to the applicant's financials and are much more weighted in the eligibility criteria than the other features.
+
+![Pie_chart](Loan_img1.PNG)![Pie_chart](Loan_img2.PNG)
+
+From our Pre Approval Distribution pie chart, 28,696 people got pre-approved. Out of that pool of pre-approved people we got our second chart that shows that 21,430 people's loans originated, i.e; got approved. So, approximately 75% of the pre-approved pool got approved, which, in a way, indicates that the preapproval reviewers were right 75% of the time. Given the nature of the metric, we decided to use it as a value to validate our machine learning model's accuracy score.
+
+![Map](Loan_img3.PNG)
+
+Our interactive map allows users to filter between different demographics and their approvcal percentage based on county. 
+
+## Conclusion
+From our analysis, we were able to answer several of the questions we started with. For our machin learning model, we could not provide a better accuracy in predicting loan orginication than the current pre approval proccess as when creating our models we were able to achieve ~59.12% accuracy. We believe the data could have been improved upon by adding credit score/fico score data. For identifying lending descrimination, there may be a disproportionate number of white applicants and male applicants, but it does not necessarily indicate bias since the general population is mostly white and/or male. For an applicants county, there is an effect on approval as county income has a significant. Lastly, the most important financial/applicant features were loan amount, applicant income, and tract to MS/AMD income.
 
 
 ## Presentation
 https://docs.google.com/presentation/d/1f93N2tBkFzOsnvKHm8yDEEB_12Z-LlqSyPY9UlhBH0Q/edit?usp=sharing
 
+[link to Pie Charts Dashboard](https://public.tableau.com/app/profile/rajeev.thimmareddy/viz/FinalProjectVisualizations_16756661848350/PieChartDashboard)
 
+[link to Bar Char Dashboard](https://public.tableau.com/app/profile/rajeev.thimmareddy/viz/feature-importances/FeatureImportances)
+
+[link to Map Dashboard](https://public.tableau.com/app/profile/nicholas.mckinney/viz/CALoanApproval/Interactive?publish=yes)
 
 ## References
 
