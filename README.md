@@ -299,7 +299,8 @@ The cleaned and split datasets were then uploaded to their respective tables usi
 The Psycopg2 database adapter was used to access the Postgres RDS housing the text and numeric data uploaded in the previous step. See the code[^*] from 'ml_analysis.ipynb.' 
 
 ``` Python
-def connect():
+def connect(PGEND_POINT, PGDATABASE_NAME, PGUSER_NAME, PGPASSWORD):
+    import psycopg2
     # Set up a connection to the postgres server.
     conn_string = "host="+ PGEND_POINT +" port="+ "5432" +" dbname="+ PGDATABASE_NAME +" user=" + PGUSER_NAME +" password="+ PGPASSWORD
     conn = psycopg2.connect(conn_string)
@@ -364,7 +365,6 @@ The dataset contains categorical text and continuous numerical data which must b
 The categorical columns must be separated from original dataset by filtering for columns with non-numeric datatypes. See the get_categorical_columns_list() function, which take the dataframe and extracts a list of columns with 'object' datatypes. 
 
 ``` Python
-
 def get_categorical_columns_list(data):
     data = data.copy()
 
@@ -405,6 +405,8 @@ The LabelEncoder() module converts categorical values into linearly asscending n
 ``` Python
 
 def encode_labels(data, categorical_columns):
+    from sklearn.preprocessing import LabelEncoder
+
     data = data.copy()
 
     categorical_data = data[categorical_columns]
@@ -427,6 +429,7 @@ The OneHotEncoder() creates buckets out of the categorical values, creating a ne
 ``` Python
 
 def encode_hot_labels(data, categorical_columns):
+    from sklearn.preprocessing import OneHotEncoder
     data = data.copy()
     # make df of columns to be encoded
     categorical_data = data[categorical_columns]
@@ -483,6 +486,15 @@ def split_target(data, target):
 X, y = split_target(ml_df_encoded, target='action_taken')
 ```
 
+The resulting dataframes must be split into training and testing datasets, using the train_test_split() method from the sklearn.model_selection package, see below:
+
+```Python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1, stratify=y)
+
+```
+
 #### Standardization
 
 Given the admixture of small and large numeric values, the machine learning dataset needed to be standardized to prevent distortion of the model toward features with large absolute values. This was achieved by using the skLearn StandardScaler() module, as part of their data preprocessing package. See the code below:
@@ -490,6 +502,7 @@ Given the admixture of small and large numeric values, the machine learning data
 ``` Python
 
 def scale_data(train, test):
+    from sklearn.preprocessing import StandardScaler
     scaler = StandardScaler()
 
     #fit the training data 
@@ -509,10 +522,235 @@ X_train_scaled, X_test_scaled = scale_data(X_train, X_test)
 
 ### Model Selection & Design
 
+Decision Trees a type of Supervised Machine Learning that can classify a datapoint based on some binary classification scheme. Decision Tree models are relatively impervious to imbalances and are often chosen as the primary machine learning model in loan applications. These models work by deriving a series of conditions from the input features, which are then used to determine a test point's binary outcome[^2]. 
+
+The two decision tree classifiers that will be tested are the Balanced Random Forest Classifier (BRFC) and the Easy Ensemble Classifier (EEC) methods, found in the imblearn.ensemble package. While the BRFC uses a single decision tree model, the EEC classifier uses an ensemble scheme, which incorporates multiple decision trees in one machine learning model. 
+
+#### Balanced Random Forest Classifier
+
+The brfc_model() function takes the split training and testing data, creates a BRFC model, fits the training data, then predicts action_taken for the testing data. This prediction is used to calculate the balanced accuracy score, see below: 
+
+``` Python
+
+def brfc_model(X_train, X_test, y_train, y_test):
+    from imblearn.ensemble import BalancedRandomForestClassifier
+    model = BalancedRandomForestClassifier()
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    brfc_accuracy = balanced_accuracy_score(y_test, y_pred)
+    print('Balanced Accuracy Score: Balanced Random Forest Classifier')
+    print(f'Accuracy Score: {brfc_accuracy}')
+
+    return model, y_pred, brfc_accuracy
+
+#Initial Test
+brfc_model_0, brfc_0_pred, brfc_0_accuracy = brfc_model(X_train, X_test, y_train, y_test)
+#Test 1
+brfc_model_1, brfc_1_pred, brfc_1_accuracy = brfc_model(X_train_1, X_test_1, y_train_1, y_test_1)
+#Test 2
+brfc_model_2, brfc_2_pred, brfc_2_accuracy = brfc_model(X_train_2, X_test_2, y_train_2, y_test_2)
+
+```
+One of the benefits of the BRFC is the ability to measure feature importances for each model. The get_feature_importance() function takes model, input_features, file_title, and graph_title, calculates feature importances for each column in the dataset, plots the data onto a horizontal bar graph and returns the feature_importances dataframe, see below:
+
+``` Python
+def get_feature_importances(model, input_features, file_title, graph_title, fig_size):
+  if not os.path.isdir('./ml'):
+    os.makedirs('./ml')
+      
+  with open(f'./ml/{file_title}_feature_importances.txt','w') as txt_file:
+  
+    importances = model.feature_importances_
+  
+    zipped_importances = sorted(zip(importances, input_features.columns), reverse=True)
+    importance_df = pd.DataFrame({'importance':[i[0] for i in zipped_importances], 'parameter':[i[1] for i in zipped_importances]})
+
+    importance_df.plot.barh('parameter', y='importance', figsize=fig_size)
+    label_ticks = np.arange(len(importance_df['parameter']))
+  
+    plt.title(f'Feature Importances - {graph_title}')
+    plt.yticks(label_ticks)
+    plt.xlabel('Input Features')
+    plt.ylabel('Importance')
+    plt.gca().invert_yaxis()
+    plt.savefig(f'./ml/feature_importances_{file_title}.png', bbox_inches='tight')
+    plt.show()
+
+    importance_df.to_csv(f'./ml/{file_title}_feature_importances')
+    txt_file.write(f'feature importances - {file_title} \n\n')
+    txt_file.write(importance_df.to_string())
+    print(importance_df.head(20))
+    return importance_df
+
+#Initial Test 
+brfc_importances = get_feature_importances(model=brfc, input_features = X, file_title='brfc_0', graph_title='BRFC Initial Test', fig_size=(10,20))
+[...]
+#Test 3
+brfc_3_importances = get_feature_importances(model=brfc_3, input_features = X_3, file_title='brfc_3', graph_title='BRFC Test 3', fig_size=(10,6))
+[...]
+
+``` 
+
+The results of these feature importances were used to determine which columns needed further binning. 
+
+#### Easy Ensemble Classifier 
+
+The eec_model() function takes the split training and testing data, creates a EEC model, fits the training data, then predicts action_taken for the testing data. This prediction is used to calculate the balanced accuracy score, see below: 
+
+``` Python
+def get_eec_model(X_train, X_test, y_train, y_test):
+    from imblearn.ensemble import EasyEnsembleClassifier 
+    #initiate eec model
+    model = EasyEnsembleClassifier()
+    model.fit(X_train, y_train)
+    #predict target values for test data
+    y_pred = eec_model.predict(X_test)
+    #calculate accuracy score
+    eec_accuracy = balanced_accuracy_score(y_test, y_pred)
+    print('Balanced Accuracy Score: Easy Ensemble Classifier')
+    print(f'Accuracy Score: {eec_accuracy}')
+  
+    return model, y_pred, eec_accuracy
+
+#Test 0
+eec_model_0, eec_0_pred, eec_0_accuracy = eec_model(X_train, X_test, y_train, y_test)
+#Test 1
+eec_model_1, eec_1_pred, eec_1_accuracy = eec_model(X_train_1_scaled, X_test_1_scaled, y_train_1, y_test_1)
+#Test 2
+eec_model_2, eec_2_pred, eec_2_accuracy = eec_model(X_train_2_scaled, X_test_2_scaled, y_train_2, y_test_2)
+#Test 3
+eec_model_3, eec_3_pred, eec_3_accuracy = eec_model(X_train_3_scaled, X_test_3_scaled, y_train_3, y_test_3)
+```
+
 ## Results
 
-### EDA Results 
+Both models and their respective tests were measured using:
+* Balanced Accuracy Score (from sklearn.metrics)
+* Confusion Matrix  (from sklearn.metrics)
+* Imbalanced Classification Report
 
+
+``` Python
+def model_metrics(model_name, test, pred, file_title):
+    if not os.path.isdir('./ml'):
+        os.makedirs('./ml')
+        
+    with open(f'./ml/{file_title}_results.txt','w') as txt_file:
+        model_accuracy = balanced_accuracy_score(test, pred)
+        cm = confusion_matrix(test, pred)
+        cm_df = pd.DataFrame(cm, columns=['Predicted 0','Predicted 1'], index=['Actual 0','Actual 1'])
+        crib = classification_report_imbalanced(test,pred)
+        txt_file.write(f'Accuracy Score: {model_accuracy} \n\n')
+        txt_file.write(str(cm_df))
+        txt_file.write(f'\n\n {crib}')
+        print(model_name)
+        print(f'Accuracy Score: {model_accuracy:.4f}')
+        print(cm_df)
+        print(crib)
+
+model_metrics(mode_name='Balanced Random Forest Classifier - Initial Test', test=y_test, pred=brfc_y_pred, file_title='brfc_0')
+model_metrics(mode_name='Balanced Random Forest Classifier - Test 1', test=y_test_1, pred=brfc_1_pred, file_title='brfc_1')
+
+```
+### Balanced Random Forest Classifier 
+
+The results of the initial BRFC test using the OneHotEncoded() dataset are as follows: 
+    Balanced Accuracy Score: 0.5352
+    Confusion Matrix: Balanced Random Forest Classifier Initial Test
+    |         | Predicted 0 | Predicted 1|
+    |---------|-------------|------------|
+    |Actual 0 |       88891 |       75147|
+    |Actual 1 |       94885 |      106389|
+    Imbalanced Classification Report: Balanced Random Forest Classifier Initial Test 
+    |              |      pre  |     rec   |    spe   |     f1   |    geo   |    iba  |     sup|
+    |--------------|-----------|-----------|----------|----------|----------|---------|--------|
+    |          0   |    0.48   |   0.54    |  0.53    |  0.51    |  0.54    |  0.29   | 164038|
+    |          1   |    0.59   |   0.53    |  0.54    |  0.56    |  0.54    |  0.29   | 201274|
+    |avg / total   |    0.54   |   0.53    |  0.54    |  0.54    |  0.54    |  0.29   | 365312|
+
+#### BRFC Test 1
+
+The results of BRFC Test 1 with the reduced, OneHotEncoded dataset are as follows: 
+    Balanced Accuracy Score: 
+    Confusion Matrix: Balanced Random Forest Classifier Initial Test
+    |         | Predicted 0  |Predicted 1|
+    |---------|--------------|-----------|
+    |Actual 0 |       88829  |      75209|
+    |Actual 1 |       94925  |     106349|
+    Imbalanced Classification Report: Balanced Random Forest Classifier Test 1
+    |             |       pre  |     rec  |     spe   |     f1   |    geo  |     iba |     sup|
+    |-------------|------------|----------|-----------|----------|---------|---------|--------|
+    |          0  |     0.48   |   0.54   |   0.53    |  0.51    |  0.53   |   0.29  |  164038|
+    |          1  |     0.59   |   0.53   |   0.54    |  0.56    |  0.53   |   0.29  |  201274|
+    |avg / total  |     0.54   |   0.53   |   0.54    |  0.54    |  0.53   |   0.29  |  365312|
+
+
+
+#### BRFC Test 2
+
+Since there was no improvement in accuracy, the BRFC model was run again using the LabelEncoder() method, detailed above. 
+The results of BRFC Test 2 are as follows: 
+    Balanced Accuracy Score: 0.5788
+    Confusion Matrix: Balanced Random Forest Classifier Initial Test
+    |         | Predicted 0 | Predicted 1|
+    |---------|-------------|------------|
+    |Actual 0 |       97449 |       67181|
+    |Actual 1 |       87790 |      114367|
+    Imbalanced Classification Report: Balanced Random Forest Classifier Test 2 
+    |            |        pre  |     rec   |    spe  |      f1  |     geo |      iba |      sup|
+    |------------|-------------|-----------|---------|----------|---------|----------|--------|
+    |          0 |      0.53   |   0.59    |  0.57   |   0.56   |   0.58  |    0.34  |  164630|
+    |          1 |      0.63   |   0.57    |  0.59   |   0.60   |   0.58  |    0.33  |  202157|
+    |avg / total |      0.58   |   0.58    |  0.58   |   0.58   |   0.58  |    0.33  |  366787|
+
+### Easy Ensemble Classifier Results
+
+The results of the initial EEC test are as follows:
+    Balanced Accuracy Score: 0.5653
+    Confusion Matrix: Easy Ensemble Classifier Initial Test
+    ||Predicted 0|  Predicted 1|
+    |---------|-----------|------------|
+    |Actual 0 |      114574|        69092|
+    |Actual 1 |       66359|        68194|
+    Imbalanced Classification Report: Easy Ensemble Classifier Initial Test
+    |              |      pre  |    rec  |     spe   |     f1  |     geo   |    iba  |     sup|
+    |--------------|-----------|---------|-----------|---------|-----------|---------|--------|
+    |          0   |    0.63   |  0.62   |   0.51    |  0.63   |   0.56    |  0.32   | 183666|
+    |          1   |    0.50   |  0.51   |   0.62    |  0.50   |   0.56    |  0.31   | 134553|
+    |avg / total   |    0.58   |  0.57   |   0.56    |  0.57   |   0.56    |  0.32   | 318219|
+
+#### Test 1
+
+The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
+    Balanced Accuracy Score: 0.5648
+    Confusion Matrix: Easy Ensemble Classifier Test 1: Reduced Counties/MSAMDs
+    |         | Predicted 0 | Predicted 1|
+    |---------|-------------|------------|
+    |Actual 0 |      114583 |       69083|
+    |Actual 1 |       66507 |       68046|
+    Imbalanced Classification Report: Easy Ensemble Classifier Test 1
+    |             |       pre   |    rec    |   spe   |     f1   |    geo   |    iba  |     sup
+    |-------------|-------------|-----------|---------|----------|----------|---------|---------
+    |          0  |     0.63    |  0.62     | 0.51    |  0.63    |  0.56    |  0.32   | 183666
+    |          1  |     0.50    |  0.51     | 0.62    |  0.50    |  0.56    |  0.31   | 134553
+    |avg / total  |     0.58    |  0.57     | 0.56    |  0.57    |  0.56    |  0.32   | 318219
+
+
+#### Test 2
+
+The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
+    Balanced Accuracy Score: 0.5912
+    Confusion Matrix: Easy Ensemble Classifier Test 2: LabelEncoder
+    |          |Predicted 0 | Predicted 1|
+    |----------|------------|------------|
+    |Actual 0  |     123325 |       78671|
+    |Actual 1  |      70471 |       94107|
+    Imbalanced Classification Report: Easy Ensemble Classifier Test 2
+    |               |    pre   |    rec    |   spe    |    f1   |    geo |    iba|       sup|
+    | -----------|-----------|-----------|-----------|--------|---------|----------|----------|-
+    |          0 |      0.64 |     0.61  |    0.57   |   0.62 |     0.59|      0.35|    201996|
+    |          1 |      0.54 |     0.57  |    0.61   |   0.56 |     0.59|      0.35|    164578|
+    |avg / total |      0.60 |     0.59  |    0.59   |   0.59 |     0.59|      0.35|    366574|
 
 ## Summary
 
