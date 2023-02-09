@@ -655,34 +655,40 @@ model_metrics(mode_name='Balanced Random Forest Classifier - Test 1', test=y_tes
 ### Balanced Random Forest Classifier 
 
 The results of the initial BRFC test using the OneHotEncoded() dataset are as follows: 
-    Balanced Accuracy Score: 0.5352
-    Confusion Matrix: Balanced Random Forest Classifier Initial Test
-    |         | Predicted 0 | Predicted 1|
-    |---------|-------------|------------|
-    |Actual 0 |       88891 |       75147|
-    |Actual 1 |       94885 |      106389|
-    Imbalanced Classification Report: Balanced Random Forest Classifier Initial Test 
-    |              |      pre  |     rec   |    spe   |     f1   |    geo   |    iba  |     sup|
-    |--------------|-----------|-----------|----------|----------|----------|---------|--------|
-    |          0   |    0.48   |   0.54    |  0.53    |  0.51    |  0.54    |  0.29   | 164038|
-    |          1   |    0.59   |   0.53    |  0.54    |  0.56    |  0.54    |  0.29   | 201274|
-    |avg / total   |    0.54   |   0.53    |  0.54    |  0.54    |  0.54    |  0.29   | 365312|
+Balanced Accuracy Score: 0.5352
+Confusion Matrix: Balanced Random Forest Classifier Initial Test
+
+|         | Predicted 0 | Predicted 1|
+|---------|-------------|------------|
+|Actual 0 |       88891 |       75147|
+|Actual 1 |       94885 |      106389|
+
+Imbalanced Classification Report: Balanced Random Forest Classifier Initial Test 
+
+|              |      pre  |     rec   |    spe   |     f1   |    geo   |    iba  |     sup|
+|--------------|-----------|-----------|----------|----------|----------|---------|--------|
+|          0   |    0.48   |   0.54    |  0.53    |  0.51    |  0.54    |  0.29   | 164038|
+|          1   |    0.59   |   0.53    |  0.54    |  0.56    |  0.54    |  0.29   | 201274|
+|avg / total   |    0.54   |   0.53    |  0.54    |  0.54    |  0.54    |  0.29   | 365312|
 
 #### BRFC Test 1
 
 The results of BRFC Test 1 with the reduced, OneHotEncoded dataset are as follows: 
-    Balanced Accuracy Score: 
-    Confusion Matrix: Balanced Random Forest Classifier Initial Test
-    |         | Predicted 0  |Predicted 1|
-    |---------|--------------|-----------|
-    |Actual 0 |       88829  |      75209|
-    |Actual 1 |       94925  |     106349|
-    Imbalanced Classification Report: Balanced Random Forest Classifier Test 1
-    |             |       pre  |     rec  |     spe   |     f1   |    geo  |     iba |     sup|
-    |-------------|------------|----------|-----------|----------|---------|---------|--------|
-    |          0  |     0.48   |   0.54   |   0.53    |  0.51    |  0.53   |   0.29  |  164038|
-    |          1  |     0.59   |   0.53   |   0.54    |  0.56    |  0.53   |   0.29  |  201274|
-    |avg / total  |     0.54   |   0.53   |   0.54    |  0.54    |  0.53   |   0.29  |  365312|
+Balanced Accuracy Score: 
+Confusion Matrix: Balanced Random Forest Classifier Initial Test
+
+|         | Predicted 0  |Predicted 1|
+|---------|--------------|-----------|
+|Actual 0 |       88829  |      75209|
+|Actual 1 |       94925  |     106349|
+
+Imbalanced Classification Report: Balanced Random Forest Classifier Test 1
+
+|             |       pre  |     rec  |     spe   |     f1   |    geo  |     iba |     sup|
+|-------------|------------|----------|-----------|----------|---------|---------|--------|
+|          0  |     0.48   |   0.54   |   0.53    |  0.51    |  0.53   |   0.29  |  164038|
+|          1  |     0.59   |   0.53   |   0.54    |  0.56    |  0.53   |   0.29  |  201274|
+|avg / total  |     0.54   |   0.53   |   0.54    |  0.54    |  0.53   |   0.29  |  365312|
 
 
 
@@ -690,78 +696,78 @@ The results of BRFC Test 1 with the reduced, OneHotEncoded dataset are as follow
 
 Since there was no improvement in accuracy, the BRFC model was run again using the LabelEncoder() method, detailed above. 
 The results of BRFC Test 2 are as follows: 
-    Balanced Accuracy Score: 0.5788
-    Confusion Matrix: Balanced Random Forest Classifier Initial Test
-    
-    |         | Predicted 0 | Predicted 1|
-    |---------|-------------|------------|
-    |Actual 0 |       97449 |       67181|
-    |Actual 1 |       87790 |      114367|
-    
-    Imbalanced Classification Report: Balanced Random Forest Classifier Test 2 
-    |            |        pre  |     rec   |    spe  |      f1  |     geo |      iba |      sup|
-    |------------|-------------|-----------|---------|----------|---------|----------|--------|
-    |          0 |      0.53   |   0.59    |  0.57   |   0.56   |   0.58  |    0.34  |  164630|
-    |          1 |      0.63   |   0.57    |  0.59   |   0.60   |   0.58  |    0.33  |  202157|
-    |avg / total |      0.58   |   0.58    |  0.58   |   0.58   |   0.58  |    0.33  |  366787|
+Balanced Accuracy Score: 0.5788
+Confusion Matrix: Balanced Random Forest Classifier Initial Test
+
+|         | Predicted 0 | Predicted 1|
+|---------|-------------|------------|
+|Actual 0 |       97449 |       67181|
+|Actual 1 |       87790 |      114367|
+
+Imbalanced Classification Report: Balanced Random Forest Classifier Test 2 
+
+|            |        pre  |     rec   |    spe  |      f1  |     geo |      iba |      sup|
+|------------|-------------|-----------|---------|----------|---------|----------|--------|
+|          0 |      0.53   |   0.59    |  0.57   |   0.56   |   0.58  |    0.34  |  164630|
+|          1 |      0.63   |   0.57    |  0.59   |   0.60   |   0.58  |    0.33  |  202157|
+|avg / total |      0.58   |   0.58    |  0.58   |   0.58   |   0.58  |    0.33  |  366787|
 
 ### Easy Ensemble Classifier Results
 
 The results of the initial EEC test are as follows:
-    Balanced Accuracy Score: 0.5653
-    Confusion Matrix: Easy Ensemble Classifier Initial Test
-    
-    |            |Predicted 0|  Predicted 1|
-    |---------|-----------|------------|
-    |Actual 0 |      114574|        69092|
-    |Actual 1 |       66359|        68194|
-    
-    Imbalanced Classification Report: Easy Ensemble Classifier Initial Test
-    |              |      pre  |    rec  |     spe   |     f1  |     geo   |    iba  |     sup|
-    |--------------|-----------|---------|-----------|---------|-----------|---------|--------|
-    |          0   |    0.63   |  0.62   |   0.51    |  0.63   |   0.56    |  0.32   | 183666|
-    |          1   |    0.50   |  0.51   |   0.62    |  0.50   |   0.56    |  0.31   | 134553|
-    |avg / total   |    0.58   |  0.57   |   0.56    |  0.57   |   0.56    |  0.32   | 318219|
+Balanced Accuracy Score: 0.5653
+Confusion Matrix: Easy Ensemble Classifier Initial Test
+
+||Predicted 0|  Predicted 1|
+|---------|-----------|------------|
+|Actual 0 |      114574|        69092|
+|Actual 1 |       66359|        68194|
+
+Imbalanced Classification Report: Easy Ensemble Classifier Initial Test
+
+|              |      pre  |    rec  |     spe   |     f1  |     geo   |    iba  |     sup|
+|--------------|-----------|---------|-----------|---------|-----------|---------|--------|
+|          0   |    0.63   |  0.62   |   0.51    |  0.63   |   0.56    |  0.32   | 183666|
+|          1   |    0.50   |  0.51   |   0.62    |  0.50   |   0.56    |  0.31   | 134553|
+|avg / total   |    0.58   |  0.57   |   0.56    |  0.57   |   0.56    |  0.32   | 318219|
 
 #### Test 1
 
 The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
-    Balanced Accuracy Score: 0.5648
-    Confusion Matrix: Easy Ensemble Classifier Test 1: Reduced Counties/MSAMDs
-    
-    |         | Predicted 0 | Predicted 1|
-    |---------|-------------|------------|
-    |Actual 0 |      114583 |       69083|
-    |Actual 1 |       66507 |       68046|
-    
-    Imbalanced Classification Report: Easy Ensemble Classifier Test 1
-    
-    
-    |             |       pre   |    rec    |   spe   |     f1   |    geo   |    iba  |     sup|
-    |-------------|-------------|-----------|---------|----------|----------|---------|---------|
-    |          0  |     0.63    |  0.62     | 0.51    |  0.63    |  0.56    |  0.32   | 183666|
-    |          1  |     0.50    |  0.51     | 0.62    |  0.50    |  0.56    |  0.31   | 134553|
-    |avg / total  |     0.58    |  0.57     | 0.56    |  0.57    |  0.56    |  0.32   | 318219|
+Balanced Accuracy Score: 0.5648
+Confusion Matrix: Easy Ensemble Classifier Test 1: Reduced Counties/MSAMDs
 
+|         | Predicted 0 | Predicted 1|
+|---------|-------------|------------|
+|Actual 0 |      114583 |       69083|
+|Actual 1 |       66507 |       68046|
+
+Imbalanced Classification Report: Easy Ensemble Classifier Test 1
+
+|             |       pre   |    rec    |   spe   |     f1   |    geo   |    iba  |     sup
+|-------------|-------------|-----------|---------|----------|----------|---------|---------
+|          0  |     0.63    |  0.62     | 0.51    |  0.63    |  0.56    |  0.32   | 183666
+|          1  |     0.50    |  0.51     | 0.62    |  0.50    |  0.56    |  0.31   | 134553
+|avg / total  |     0.58    |  0.57     | 0.56    |  0.57    |  0.56    |  0.32   | 318219
 
 #### Test 2
 
 The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
-    Balanced Accuracy Score: 0.5912
-    Confusion Matrix: Easy Ensemble Classifier Test 2: LabelEncoder
-    
-    |          |Predicted 0 | Predicted 1|
-    |----------|------------|------------|
-    |Actual 0  |     123325 |       78671|
-    |Actual 1  |      70471 |       94107|
-    
-    Imbalanced Classification Report: Easy Ensemble Classifier Test 2
-    
-    |               |    pre   |    rec    |   spe    |    f1   |    geo |    iba|       sup|
-    | -----------|-----------|-----------|-----------|--------|---------|----------|----------|
-    |          0 |      0.64 |     0.61  |    0.57   |   0.62 |     0.59|      0.35|    201996|
-    |          1 |      0.54 |     0.57  |    0.61   |   0.56 |     0.59|      0.35|    164578|
-    |avg / total |      0.60 |     0.59  |    0.59   |   0.59 |     0.59|      0.35|    366574|
+Balanced Accuracy Score: 0.5912
+Confusion Matrix: Easy Ensemble Classifier Test 2: LabelEncoder
+
+|          |Predicted 0 | Predicted 1|
+|----------|------------|------------|
+|Actual 0  |     123325 |       78671|
+|Actual 1  |      70471 |       94107|
+
+Imbalanced Classification Report: Easy Ensemble Classifier Test 2
+
+|               |    pre   |    rec    |   spe    |    f1   |    geo |    iba|       sup|
+| -----------|-----------|-----------|-----------|--------|---------|----------|----------|
+|          0 |      0.64 |     0.61  |    0.57   |   0.62 |     0.59|      0.35|    201996|
+|          1 |      0.54 |     0.57  |    0.61   |   0.56 |     0.59|      0.35|    164578|
+|avg / total |      0.60 |     0.59  |    0.59   |   0.59 |     0.59|      0.35|    366574|
 
 ## Summary
 
