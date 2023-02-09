@@ -692,10 +692,12 @@ Since there was no improvement in accuracy, the BRFC model was run again using t
 The results of BRFC Test 2 are as follows: 
     Balanced Accuracy Score: 0.5788
     Confusion Matrix: Balanced Random Forest Classifier Initial Test
+    
     |         | Predicted 0 | Predicted 1|
     |---------|-------------|------------|
     |Actual 0 |       97449 |       67181|
     |Actual 1 |       87790 |      114367|
+    
     Imbalanced Classification Report: Balanced Random Forest Classifier Test 2 
     |            |        pre  |     rec   |    spe  |      f1  |     geo |      iba |      sup|
     |------------|-------------|-----------|---------|----------|---------|----------|--------|
@@ -708,10 +710,12 @@ The results of BRFC Test 2 are as follows:
 The results of the initial EEC test are as follows:
     Balanced Accuracy Score: 0.5653
     Confusion Matrix: Easy Ensemble Classifier Initial Test
-    ||Predicted 0|  Predicted 1|
+    
+    |            |Predicted 0|  Predicted 1|
     |---------|-----------|------------|
     |Actual 0 |      114574|        69092|
     |Actual 1 |       66359|        68194|
+    
     Imbalanced Classification Report: Easy Ensemble Classifier Initial Test
     |              |      pre  |    rec  |     spe   |     f1  |     geo   |    iba  |     sup|
     |--------------|-----------|---------|-----------|---------|-----------|---------|--------|
@@ -724,16 +728,20 @@ The results of the initial EEC test are as follows:
 The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
     Balanced Accuracy Score: 0.5648
     Confusion Matrix: Easy Ensemble Classifier Test 1: Reduced Counties/MSAMDs
+    
     |         | Predicted 0 | Predicted 1|
     |---------|-------------|------------|
     |Actual 0 |      114583 |       69083|
     |Actual 1 |       66507 |       68046|
+    
     Imbalanced Classification Report: Easy Ensemble Classifier Test 1
-    |             |       pre   |    rec    |   spe   |     f1   |    geo   |    iba  |     sup
-    |-------------|-------------|-----------|---------|----------|----------|---------|---------
-    |          0  |     0.63    |  0.62     | 0.51    |  0.63    |  0.56    |  0.32   | 183666
-    |          1  |     0.50    |  0.51     | 0.62    |  0.50    |  0.56    |  0.31   | 134553
-    |avg / total  |     0.58    |  0.57     | 0.56    |  0.57    |  0.56    |  0.32   | 318219
+    
+    
+    |             |       pre   |    rec    |   spe   |     f1   |    geo   |    iba  |     sup|
+    |-------------|-------------|-----------|---------|----------|----------|---------|---------|
+    |          0  |     0.63    |  0.62     | 0.51    |  0.63    |  0.56    |  0.32   | 183666|
+    |          1  |     0.50    |  0.51     | 0.62    |  0.50    |  0.56    |  0.31   | 134553|
+    |avg / total  |     0.58    |  0.57     | 0.56    |  0.57    |  0.56    |  0.32   | 318219|
 
 
 #### Test 2
@@ -741,13 +749,16 @@ The dataset was binned to reduce the number of counties/MSAMDs. The results of t
 The dataset was binned to reduce the number of counties/MSAMDs. The results of this test are as follows:
     Balanced Accuracy Score: 0.5912
     Confusion Matrix: Easy Ensemble Classifier Test 2: LabelEncoder
+    
     |          |Predicted 0 | Predicted 1|
     |----------|------------|------------|
     |Actual 0  |     123325 |       78671|
     |Actual 1  |      70471 |       94107|
+    
     Imbalanced Classification Report: Easy Ensemble Classifier Test 2
+    
     |               |    pre   |    rec    |   spe    |    f1   |    geo |    iba|       sup|
-    | -----------|-----------|-----------|-----------|--------|---------|----------|----------|-
+    | -----------|-----------|-----------|-----------|--------|---------|----------|----------|
     |          0 |      0.64 |     0.61  |    0.57   |   0.62 |     0.59|      0.35|    201996|
     |          1 |      0.54 |     0.57  |    0.61   |   0.56 |     0.59|      0.35|    164578|
     |avg / total |      0.60 |     0.59  |    0.59   |   0.59 |     0.59|      0.35|    366574|
