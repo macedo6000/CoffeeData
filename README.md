@@ -4,11 +4,13 @@ The Home Mortgage Disclosure Act was passed in 1975 to protect homeowners by man
 
 ## Overview
 
-In this project, Team 5 will be analyzing the eligibility criteria for home mortgages. The reason why we chose to analyze the loan approval process is to identify what are potential factors on these applications. By the year, the reality of wanting to have our dream homes for our families becomes a much more serious topic. Understanding loans and acknowledging what components increases our chances of securing credit at the most favorable terms can save you thousands. 
+In this project, Team 5 will be analyzing the eligibility criteria for home mortgages. The purpose of our project is to analyze mortgage data for California for the year 2017. As a team, we will examine multiple indicators such as demographic, personal, and financial information for each mortgage application. For the demographic, we want to identify if there is bias on applicants that come from a more diverse background involving gender, race, and ethnicity. Personal features consists of their location, HOEPA status, or the number of owners in an occupied unit. Lastly, the applicants financial information, which should be the most important, uses data such as their income and loan information. By studying this dataset, the team hopes to further understand loan applications and help others identify what factors can potentially predict the likelyhood of getting an offer. As well, to eliminate lending discrimination in this case if the issues rises. 
+
 
 ### The selected topic and the reasoning for that selection
 
-As a team, we will examine multiple indicators such as demographic, personal, and financial information for each mortgage application. For the demographic, we want to identify if there is bias on applicants that come from a more diverse background involving gender, race, and ethnicity. Personal features consists of their location, HOEPA status, or the number of owners in an occupied unit. Lastly, the applicants financial information, which should be the most important, uses data such as their income and loan information. By studying this dataset, the team hopes to further understand loan applications and help others identify what factors can potentially predict the likelyhood of getting an offer. As well, to eliminate lending discrimination in this case if the issues rises. 
+The reason why we chose to analyze the loan approval process is to identify what are potential factors on these applications. By the year, the reality of wanting to have our dream homes for our families becomes a much more serious topic. Understanding loans and acknowledging what components increases our chances of securing credit at the most favorable terms can save you thousands. Furthermore, we wanted to identify if there was bias on an applicants demographic to ensure that financial institutions are making loan decisions and policies without discrimination. Being that millions of people are applying for mortgages each year, HMDA data 
+allows for transparency of what happens to those loan applications.
 
 ### The questions that the team plans to answer with the project
 
