@@ -1,4 +1,4 @@
-# Evaluating Home Mortgage Eligbility Criteria using Random Forest Classification Models 
+# Evaluating Home Mortgage Eligibility Criteria using Random Forest Classification Models 
 
 The Home Mortgage Disclosure Act was passed in 1975 to protect homeowners by mandating that financial institutions make home mortgage data publicly available[^1]. The HMDA Loan Application Register was obtained from the federal Consumer Financial Protection Bureau (CFPB), which annually collects, aggregates, and makes publicly available mortgage data as required by the HMDA.
 
